@@ -1,0 +1,93 @@
+.sidebar-wrapper {
+    position: relative;
+    height: 100%;
+    padding: 1em 1.5em 2em 3em;
+    margin-top: 2em;
+    width: 10rem;
+    font-size: .8rem;
+}
+
+.sidebar {
+    position: fixed;
+    white-space: nowrap;
+    height: 100%;
+}
+
+@media only screen and (max-width: 968px) {
+    .sidebar-wrapper {
+        display: none;
+    }
+}
+
+.icon, svg {
+    width: 20px;
+    height: 20px;
+    filter: invert(70%);
+}
+
+.icon-store {
+    background: url(https://www.svgrepo.com/show/105540/label.svg);
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.brand {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
+
+.brand a {
+    text-decoration: none;
+    color: var(--color1);
+    margin-left: 1.5em;
+}
+
+.sidebar li {
+    margin-bottom: 3em;
+    display: block;
+}
+
+.sidebar li:hover a {
+    color: white;
+}
+
+.sidebar li:hover span, .sidebar li:hover svg, .sidebar li:hover img {
+    filter: invert(100%);
+}
+
+.sidebar .current {
+    color: white;
+}
+
+.sidebar .current .icon {
+    filter: invert(100%);
+}
+
+.sidebar li a {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    text-decoration: none;
+    color: var(--color2);
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.sidebar li img, .sidebar li svg, .sidebar li span {
+    transition: 0.2s;
+    margin-right: 2.5em;
+    margin-left: 5px;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 88%;
+}

@@ -1,0 +1,93 @@
+.friendlist-wrapper {
+    position: fixed;
+    top: 3em;
+    right: 1em;
+}
+
+.friendlist {
+    background: var(--bg-color2);
+    border: var(--color2) solid 2px;
+    border-radius: 10px;
+    padding: 1.5em;
+    top: 2em;
+    height: 85vh;
+    width: auto;
+    right: 1.5em;
+}
+
+.friendlist-wrapper input[type="radio"] {
+    opacity: 0;
+    position: fixed;
+    width: 0;
+}
+
+.toggle-menu {
+    background: rgb(34, 34, 34);
+    border-radius: 50px;
+    margin: 1.5em auto;
+    width: fit-content;
+    padding: 0.8em 0.4em;
+}
+
+.friendlist-wrapper label {
+    padding: .5em 2.5em;
+    user-select: none;
+    cursor: pointer;
+    color: var(--color2);
+    transition: 0.2s;
+}
+
+.friendlist-wrapper label:hover {
+    color: rgb(172, 172, 172);
+}
+
+.friendlist-wrapper input[type="radio"]:checked + label {
+    background-color: rgb(68, 68, 68);
+    border-radius: 15px;
+    color: white;
+}
+
+.search {
+    display: flex;
+    flex-direction: row;
+}
+
+.search input[type="search"] {
+    border: var(--bg-color5) solid;
+    border-width: 1px 0 1px 1px;
+    font-weight: bold;
+    color: var(--color2);
+    border-radius: 5px 0 0 5px;
+    font-size: 14px;
+    padding: 0.8em;
+    width: 90%;
+    background: transparent;
+    outline: none;
+}
+
+.search input[type="search"]:focus, input[type="search"]:focus + .search-btn {
+    border-color: #fff;
+    transition: 0.4s;
+}
+
+.search input[type="search"]::placeholder {
+    color: var(--color2);
+}
+
+.search-btn {
+    border-color: var(--bg-color5);
+    border-style: solid;
+    border-radius: 0 5px 5px 0;
+    border-width: 1px 1px 1px 0;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: center;
+    padding-right: 2em;
+    width: 30px;
+}
+
+@media only screen and (max-width: 1420px) {
+    .friendlist-wrapper {
+        display: none;
+    }
+}
