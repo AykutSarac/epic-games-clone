@@ -1,20 +1,23 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import './Friendlist.css'
 import { SEARCH } from '../../assets'
 
 const Friendlist = () => {
 
+
+    const [search, setSearch] = useState('');
     const [toggle, setToggle] = useState(true);
     const [friendlist, setFriendlist] = useState([
-        { username: 'AykutSrch', status: 'online', you: true },
-        { username: 'Shimekato', status: 'online' },
-        { username: 'fulldoly1', status: 'offline' },
-        { username: 'KDM_Bifors', status: 'offline' },
-        { username: 'Fnatic_Flayra', status: 'offline' },
-        { username: 'LapuLapu53', status: 'offline' }
+        { username: 'AykutSrch', status: 'online', you: true, color: 'darkviolet' },
+        { username: 'Shimekato', status: 'online', color: 'orange' },
+        { username: 'fulldoly1', status: 'offline', color: 'olive' },
+        { username: 'KDM_Bifors', status: 'offline', color: 'darkviolet' },
+        { username: 'Fnatic_Flayra', status: 'offline', color: 'darkviolet' },
+        { username: 'LapuLapu53', status: 'offline', color: 'olive' },
+        { username: 'RealBillGates', status: 'offline', color: 'darkviolet' },
+        { username: 'FortniteKid007', status: 'online', color: 'olive' }
     ]);
 
-    const randomColor = () => ['darkviolet', 'orange', 'olive'][Math.floor(Math.random() * 3)];
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -27,8 +30,15 @@ const Friendlist = () => {
         return () => clearInterval(interval);
     });
 
-    const onChange = () => {
-        setToggle(!toggle);
+    const onToggle = () => setToggle(!toggle);
+    const onChange = (e) => setSearch(e.target.value);
+
+    const sortList = (a, b) => {
+        if (a.status === 'online') {
+            return 1
+        } else {
+            return -1
+        }
     }
 
     return (
@@ -40,40 +50,42 @@ const Friendlist = () => {
                         <span className="icon icon-settings"></span>
                     </div>
                     <div className="toggle-menu">
-                        <input type="radio" name="type" id="friends" onChange={onChange} checked={toggle} />
+                        <input type="radio" name="type" id="friends" onChange={onToggle} checked={toggle} />
                         <label htmlFor="friends">Friends</label>
-                        <input type="radio" name="type" id="requests" onChange={onChange} checked={!toggle} />
+                        <input type="radio" name="type" id="requests" onChange={onToggle} checked={!toggle} />
                         <label htmlFor="requests">Requests</label>
                     </div>
                     <div className="search">
-                        <input type="search" placeholder="Search or add players" />
+                        <input type="search" placeholder="Search or add players"  onChange={onChange} />
                         <span className="search-btn" style={{ backgroundImage: `url(${SEARCH})` }}></span>
                     </div>
                 </div>
 
                 <div className="userlist">
                     <p>Online {`(${friendlist.filter(user => user.status === 'online').length})`}</p>
-                    <ul className="online">
+                    <ul>
                         {friendlist.filter(user => user.status === 'online').map((user, index) => (
                             <li key={index}>
-                                <span className={`icon ${user.status}`} style={{ background: randomColor() }}>{user.username[0]}</span>
+                                <span className={`icon ${user.status}`} style={{ background: user.color }}>{user.username[0]}</span>
                                 {user.username} { user.you && <span className="you">YOU</span>}
-                                <span className="status">{user.status}</span>
+                                <span className="status">{user.status[0].toUpperCase() + user.status.slice(1)}</span>
                             </li>
                         ))}
                     </ul>
                     <p>Friends</p>
-                    <ul className="frinds">
-                        {friendlist.map((user, index) => (
+                    <ul>
+                        {friendlist.filter(user =>  !user.you && user.username.toLowerCase().includes(search.toLowerCase())).sort(sortList).map((user, index) => (
                             <li key={index}>
-                                <span className={`icon ${user.status}`} style={{ background: randomColor() }}>{user.username[0].toUpperCase()}</span>
+                                <span className={`icon ${user.status}`} style={{ background: user.color }}>{user.username[0].toUpperCase()}</span>
                                 {user.username}
-                                <span className="status">{user.status}</span>
+                                <span className="status">{user.status[0].toUpperCase() + user.status.slice(1)}</span>
                             </li>
                         ))}
                     </ul>
                 </div>
-
+                <div className="connect">
+                    <a href="!#">Connect your social account</a> to find friends on Epic<br/>Games!
+                </div>
             </div>
         </div>
     )

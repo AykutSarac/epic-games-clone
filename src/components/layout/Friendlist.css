@@ -1,19 +1,18 @@
 .friendlist-wrapper {
-    position: fixed;
-    top: 3em;
-    right: 2em;
-    z-index: 999;
+    position: relative;
 }
 
 .friendlist {
+    position: fixed;
     background: var(--bg-color2);
     border: var(--color2) solid 2px;
     border-radius: 10px;
     padding: 0 1.5em 1.5em 1.5em;
-    height: 85vh;
-    width: auto;
-    position: relative;
-    overflow: hidden;
+    height: 90vh;
+    width: 350px;
+    z-index: 999;
+    top: 3em;
+    right: 2em;
 }
 
 .friendlist-wrapper input[type="radio"] {
@@ -28,6 +27,7 @@
     margin: 1.5em auto;
     width: fit-content;
     padding: 0.8em 0.4em;
+    white-space: nowrap;
 }
 
 .friendlist-wrapper label {
@@ -90,7 +90,7 @@
 
 .userlist {
     position: relative;
-    height: 67vh;
+    height: 65vh;
     overflow-y: scroll;
 }
 
@@ -108,10 +108,12 @@
     padding: 0;
     list-style: none;
     font-weight: bold;
+    user-select: none;
 }
 
 .userlist li {
     margin: 2em auto 2em 3.5em;
+    cursor: pointer;
 }
 
 .userlist .icon {
@@ -162,10 +164,22 @@
 .userlist .status {
     font-weight: normal;
     display: block;
+    color: #a0a0a0;
 }
 
+.connect {
+    padding: 1em 3em;
+    text-align: left;
+    border-top: var(--color2) solid 1px;
+    margin: auto -1.5em;
+    font-size: 12px;
+}
 
-@media only screen and (max-width: 1420px) {
+.connect a {
+    color: white;
+}
+
+@media only screen and (max-width: 968px) {
     .friendlist-wrapper {
         display: none;
     }

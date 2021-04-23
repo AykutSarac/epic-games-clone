@@ -1,6 +1,5 @@
 .news-list {
     display: flex;
-    width: 100%;
     justify-content: space-between;
     border-bottom: var(--bg-color3) solid 1.5px;
     padding-bottom: 5em;
@@ -9,10 +8,10 @@
 .news-list .card {
     display: flex;
     flex-direction: column;
-    width: 400px;
     color: white;
     text-decoration: none;
     line-height: 20px;
+    margin-right: 1em;
 }
 
 .news-list .timestamp {
