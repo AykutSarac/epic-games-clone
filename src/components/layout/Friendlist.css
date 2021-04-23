@@ -32,7 +32,6 @@
 
 .friendlist-wrapper label {
     padding: .5em 2.5em;
-    user-select: none;
     cursor: pointer;
     color: var(--color2);
     transition: 0.2s;
@@ -108,7 +107,6 @@
     padding: 0;
     list-style: none;
     font-weight: bold;
-    user-select: none;
 }
 
 .userlist li {
