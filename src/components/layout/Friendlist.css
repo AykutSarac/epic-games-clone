@@ -93,15 +93,6 @@
     overflow-y: scroll;
 }
 
-.userlist::-webkit-scrollbar {
-    width: 10px;
-}
-
-.userlist::-webkit-scrollbar-thumb {
-    background: grey;
-    border-radius: 5px;
-}
-
 .userlist ul {
     margin: 0;
     padding: 0;
