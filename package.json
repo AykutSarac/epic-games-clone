@@ -2,6 +2,7 @@
   "name": "epic-games-clone",
   "version": "0.1.0",
   "author": "AykutSarac",
+  "description": "Epic Games Client frontend clone made with React.",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.10",
