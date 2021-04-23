@@ -1,18 +1,19 @@
 .friendlist-wrapper {
     position: fixed;
     top: 3em;
-    right: 1em;
+    right: 2em;
+    z-index: 999;
 }
 
 .friendlist {
     background: var(--bg-color2);
     border: var(--color2) solid 2px;
     border-radius: 10px;
-    padding: 1.5em;
-    top: 2em;
+    padding: 0 1.5em 1.5em 1.5em;
     height: 85vh;
     width: auto;
-    right: 1.5em;
+    position: relative;
+    overflow: hidden;
 }
 
 .friendlist-wrapper input[type="radio"] {
@@ -50,6 +51,7 @@
 .search {
     display: flex;
     flex-direction: row;
+    margin: 0 0 1em;
 }
 
 .search input[type="search"] {
@@ -85,6 +87,83 @@
     padding-right: 2em;
     width: 30px;
 }
+
+.userlist {
+    position: relative;
+    height: 70vh;
+    overflow-y: scroll;
+}
+
+.userlist::-webkit-scrollbar {
+    width: 10px;
+}
+
+.userlist::-webkit-scrollbar-thumb {
+    background: grey;
+    border-radius: 5px;
+}
+
+.userlist ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-weight: bold;
+}
+
+.userlist li {
+    margin: 2em auto 2em 3.5em;
+}
+
+.userlist .icon {
+    color: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+}
+
+.userlist .icon.online::after, .userlist .icon.offline::after {
+    position: absolute;
+    content: '';
+    width: 8px;
+    height: 8px;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    border: var(--bg-color2) solid 2px;
+}
+
+.userlist .icon.online::after {
+    background: lime;
+}
+
+
+.userlist .icon.offline::after {
+    background: grey;
+}
+
+.userlist .you {
+    background: var(--bg-color3);
+    border-radius: 5px;
+    font-size: 10px;
+    font-weight: normal;
+    padding: 2px 4px;
+}
+
+.userlist p {
+    color: #a0a0a0;
+    font-weight: bold;
+}
+
+.userlist .status {
+    font-weight: normal;
+    display: block;
+}
+
 
 @media only screen and (max-width: 1420px) {
     .friendlist-wrapper {
