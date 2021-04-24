@@ -21,7 +21,6 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route exact path="/store" component={Store} />
             <Route exact path="/library" component={Library} />
-            <Route path="*" component={Home} />
           </Switch>
         </Sidecontent>
       </div>
