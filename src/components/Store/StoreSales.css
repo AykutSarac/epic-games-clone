@@ -1,0 +1,57 @@
+.sales {
+    padding-bottom: 5em;
+}
+
+.saleslist {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    justify-content: space-between;
+}
+
+
+
+.saleslist .card {
+    width: 23%;
+}
+
+.saleslist .card-text {
+    word-wrap: break-word;
+    font-weight: bold;
+}
+
+.saleslist .author {
+    color: #a0a0a0;
+}
+
+.saleslist .pricetag {
+    background: rgb(0, 119, 255);
+    border-radius: 5px;
+    padding: .5em;
+    margin-right: 1em;
+    font-size: 10px;
+}
+
+.saleslist .oldprice {
+    color: #a0a0a0;
+    text-decoration: line-through;
+}
+
+.saleslist a {
+    text-decoration: none;
+    color: white;
+}
+
+.saleslist a:hover img {
+    filter: brightness(110%);
+}
+
+.saleslist img {
+    height: 350px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
