@@ -21,31 +21,39 @@
  }
 
  body::-webkit-scrollbar-thumb {
-  background: rgb(68, 68, 68);
-  border-radius: 5px;
-}
+   background: rgb(68, 68, 68);
+   border-radius: 5px;
+ }
 
-body::-webkit-scrollbar {
-  width: 5px;
-}
+ body::-webkit-scrollbar {
+   width: 5px;
+ }
 
  *::-webkit-scrollbar {
-  width: 10px;
-}
+   width: 10px;
+ }
 
-*::-webkit-scrollbar-thumb {
-  background: grey;
-  border-radius: 5px;
-}
+ *::-webkit-scrollbar-thumb {
+   background: grey;
+   border-radius: 5px;
+ }
 
  .App {
    display: grid;
-   grid-template-columns: 250px auto 400px;
+   grid-template-columns: 250px auto;
+   grid-template-rows: 0;
+ }
+
+
+ .homepage {
+   display: grid;
+   grid-template-columns: auto 400px;
  }
 
  @media only screen and (max-width: 968px) {
 
-   .App {
+   .App,
+   .homepage {
      display: unset;
    }
  }

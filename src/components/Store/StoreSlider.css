@@ -1,0 +1,147 @@
+.slider-wrapper {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    height: fit-content;
+    width: 95%;
+    margin-bottom: 3em;
+}
+
+.featured {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 4px 0 0 4px;
+}
+
+.featured .buttons {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    gap: 1px;
+}
+
+.featured .btn {
+    background-color: rgb(0, 119, 255);
+    text-decoration: none;
+    color: white;
+    width: fit-content;
+}
+
+.featured .btn:hover {
+    filter: brightness(110%);
+}
+
+.featured .btn-download {
+    padding: 1em;
+    border-radius: 5px 0 0 5px;
+}
+
+.featured .btn-wishlist {
+    padding-top: 15px;
+    border-radius: 0 5px 5px 0;
+    width: 40px;
+    height: auto;
+}
+
+.featured .purchase {
+    padding: .5em 1em;
+    border-right: lightblue solid 1px;
+    margin-right: 1em;
+}
+
+.featured .item-text {
+    box-sizing: content-box;
+    overflow: hidden;
+    padding: 0 3em 3em;
+    width: 40%;
+    font-weight: bold;
+    z-index: 2;
+}
+
+.featured .item-text::before {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.300);
+    width: 100%;
+    height: 100%;
+    content: '';
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.featured .btn {
+    margin-top: 2em;
+}
+
+.gamelist {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 20%;
+    background-color: var(--bg-color4);
+    border-radius: 0 4px 4px 0;
+}
+
+.gamelist .game:hover {
+    background: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+}
+
+.gamelist .game {
+    display: flex;
+    gap: 1em;
+    padding: 1em;
+    overflow: hidden;
+    line-height: 20px;
+    position: relative;
+}
+
+.gamelist .current, .gamelist .current:hover {
+    background-color: #0074D44E;
+}
+
+.gamelist .current::after {
+    position: absolute;
+    width: 100%;
+    background: white;
+    content: '';
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    animation: sliderAnimate 7s;
+}
+
+.gamelist .current::before {
+    position: absolute;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.342);
+    content: '';
+    height: 2px;
+    left: 0;
+    bottom: 0;
+}
+
+@keyframes sliderAnimate {
+    from {
+        width: 0;
+    } 
+    to {
+        width: 100%;
+    }
+}
+
+.gamelist img {
+    width: 40px;
+    height: 60px;
+    border-radius: 4px;
+    object-fit: cover;
+    margin-left: .5em;
+}

@@ -1,0 +1,31 @@
+.storeNavbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: var(--color2);
+    margin-bottom: 1em;
+}
+
+.storeNavbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.storeNavbar li {
+    display: inline-block;
+    margin: 0 1em;
+}
+
+.storeNavbar .primary-nav li:nth-child(1) {
+    color: white;
+}
+
+.storeNavbar input[type="search"] {
+    color: white;
+    background: var(--bg-color4);
+    border: none;
+    border-radius: 3px;
+    width: 200px;
+    padding: .8em;
+}

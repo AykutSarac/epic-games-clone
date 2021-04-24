@@ -85,7 +85,7 @@
     margin-left: 5px;
 }
 
-nav {
+.sidebar nav {
     display: flex;
     flex-direction: column;
     justify-content: space-between;

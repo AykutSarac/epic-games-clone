@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+import StoreSlider from '../components/Store/StoreSlider'
+import StoreNavbar from '../components/Store/StoreNavbar'
+import StoreSales from '../components/Store/StoreSales'
 
 const Store = () => {
     return (
-        <div>
-            Store
-        </div>
+        <Fragment>
+            <StoreNavbar />
+            <StoreSlider />
+            <StoreSales />
+        </Fragment>
     )
 }
 
