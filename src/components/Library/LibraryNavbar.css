@@ -1,0 +1,38 @@
+.libraryNavbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: var(--color2);
+    margin-bottom: 1em;
+}
+
+.libraryNavbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.libraryNavbar li {
+    display: inline-block;
+    margin: 0 1em;
+}
+
+.libraryNavbar .primary-nav select {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: white;
+}
+
+.libraryNavbar label {
+    padding-right: .5em;
+}
+
+.libraryNavbar input[type="search"] {
+    color: white;
+    background: var(--bg-color4);
+    border: none;
+    border-radius: 3px;
+    width: 200px;
+    padding: .8em;
+}

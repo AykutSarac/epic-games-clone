@@ -1,0 +1,32 @@
+.library .shop {
+    width: 225px;
+    height: 300px;
+    background: var(--bg-color4);
+    border-radius: 5px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    background-repeat: no-repeat;
+    justify-content: center;
+    flex-direction: column;
+    text-decoration: none;
+    color: #a0a0a0;
+}
+
+.library .shop .icon-store {
+    background-color: rgb(180, 180, 180);
+    border-radius: 50%;
+    background-image: url(https://www.svgrepo.com/show/105540/label.svg);
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: center 20px;
+    width: 70px;
+    height: 70px;
+    filter: invert(100%);
+    margin-bottom: 1em;
+}
+
+.library .shop:hover {
+    filter: brightness(120%);
+    cursor: pointer;
+}

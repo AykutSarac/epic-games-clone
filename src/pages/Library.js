@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+import Games from '../components/Library/Games'
+import LibraryNavbar from '../components/Library/LibraryNavbar'
 
 const Library = () => {
     return (
-        <div>
-            Library
-        </div>
+        <Fragment>
+            <LibraryNavbar />
+            <Games />
+        </Fragment>
     )
 }
 
