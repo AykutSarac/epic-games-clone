@@ -11,7 +11,7 @@ const Sidebar = () => {
         <div className="sidebar-wrapper">
             <div className="sidebar">
                 <div className="brand">
-                    <img src="./logo.png" width="36" alt="epic logo" />
+                    <img src={ICON.LOGO} width="36" alt="epic logo" />
                     <Link to="/">Epic Games</Link>
                 </div>
                 <nav>
