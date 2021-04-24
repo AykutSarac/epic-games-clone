@@ -24,7 +24,7 @@ const Sidebar = () => {
                     <ul className="secondary-nav">
                         <li><a href="#downloads"><img src={ICON.DOWNLOAD} className="icon" alt="download icon" />Downloads</a></li>
                         <li><a href="#settings"><GearIcon className="icon" />Settings</a></li>
-                        <li><a href="#profile"><ProfileIcon className="icon" />AykutSrch</a></li>
+                        <li className="icon-profile"><a href="#profile"><ProfileIcon className="icon" />AykutSrch</a></li>
                     </ul>
                 </nav>
             </div>

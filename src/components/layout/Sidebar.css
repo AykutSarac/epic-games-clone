@@ -50,6 +50,7 @@
 
 .sidebar li {
     margin-bottom: 3em;
+    position: relative;
     display: block;
 }
 
@@ -83,6 +84,18 @@
     transition: 0.2s;
     margin-right: 2.5em;
     margin-left: 5px;
+}
+
+
+.sidebar .icon-profile::after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: olive;
+    border-radius: 50%;
+    top: -5px;
+    left: 1.8em;
+    position: absolute;
 }
 
 .sidebar nav {
