@@ -2,17 +2,17 @@
 
 🎮 Epic Games Launcher frontend clone created using React.
 
-### [Live Demo](https://aykutsarac.github.io/epic-games-clone)
+## [Live Demo](https://aykutsarac.github.io/epic-games-clone)
 
 ![preview](https://i.ibb.co/Q65Lxzm/epicpreview.gif)
 
-### User Stories:
+## User Stories
 
 - User can navigate between pages
 - User can search friends at friendlist
 - User can change current slide
 
-### Running Locally
+## Running Locally
 
 ```bash
 # Install dependencies
