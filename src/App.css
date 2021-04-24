@@ -21,12 +21,14 @@
  }
 
  body::-webkit-scrollbar-thumb {
-   background: rgb(68, 68, 68);
+   background: rgb(197, 197, 197);
    border-radius: 5px;
  }
+ 
 
  body::-webkit-scrollbar {
-   width: 5px;
+    width: 8px;
+   background-color: var(--bg-color5);
  }
 
  *::-webkit-scrollbar {

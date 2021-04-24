@@ -116,7 +116,7 @@
     height: 2px;
     left: 0;
     bottom: 0;
-    animation: sliderAnimate 7s;
+    animation: sliderAnimate 9s;
 }
 
 .gamelist .current::before {
@@ -130,12 +130,8 @@
 }
 
 @keyframes sliderAnimate {
-    from {
-        width: 0;
-    } 
-    to {
-        width: 100%;
-    }
+    0% { width: 0; }
+  100% { width: 100%; }
 }
 
 .gamelist img {

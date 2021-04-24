@@ -12,7 +12,7 @@ const StoreSlider = () => {
         const interval = setInterval(() => {
             if (counter === gameList.length - 1) return setCounter(0);
             setCounter(parseInt(counter+1));
-        }, 6000);
+        }, 8000);
 
         return () => clearInterval(interval);
     }, [gameList.length, counter]);
