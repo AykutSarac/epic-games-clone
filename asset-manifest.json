@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/epic-games-clone/static/css/main.6e807b18.chunk.css",
-    "main.js": "/epic-games-clone/static/js/main.a9ce62f6.chunk.js",
-    "main.js.map": "/epic-games-clone/static/js/main.a9ce62f6.chunk.js.map",
+    "main.css": "/epic-games-clone/static/css/main.49084fce.chunk.css",
+    "main.js": "/epic-games-clone/static/js/main.9649e958.chunk.js",
+    "main.js.map": "/epic-games-clone/static/js/main.9649e958.chunk.js.map",
     "runtime-main.js": "/epic-games-clone/static/js/runtime-main.e758fc61.js",
     "runtime-main.js.map": "/epic-games-clone/static/js/runtime-main.e758fc61.js.map",
-    "static/js/2.e9daef35.chunk.js": "/epic-games-clone/static/js/2.e9daef35.chunk.js",
-    "static/js/2.e9daef35.chunk.js.map": "/epic-games-clone/static/js/2.e9daef35.chunk.js.map",
+    "static/js/2.810a7d43.chunk.js": "/epic-games-clone/static/js/2.810a7d43.chunk.js",
+    "static/js/2.810a7d43.chunk.js.map": "/epic-games-clone/static/js/2.810a7d43.chunk.js.map",
     "index.html": "/epic-games-clone/index.html",
-    "static/css/main.6e807b18.chunk.css.map": "/epic-games-clone/static/css/main.6e807b18.chunk.css.map",
-    "static/js/2.e9daef35.chunk.js.LICENSE.txt": "/epic-games-clone/static/js/2.e9daef35.chunk.js.LICENSE.txt",
+    "static/css/main.49084fce.chunk.css.map": "/epic-games-clone/static/css/main.49084fce.chunk.css.map",
+    "static/js/2.810a7d43.chunk.js.LICENSE.txt": "/epic-games-clone/static/js/2.810a7d43.chunk.js.LICENSE.txt",
     "static/media/fortnite.95bc6d36.jpg": "/epic-games-clone/static/media/fortnite.95bc6d36.jpg",
     "static/media/gear.c8a9c916.svg": "/epic-games-clone/static/media/gear.c8a9c916.svg",
     "static/media/profile.2ab6e483.svg": "/epic-games-clone/static/media/profile.2ab6e483.svg",
@@ -17,8 +17,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.e758fc61.js",
-    "static/js/2.e9daef35.chunk.js",
-    "static/css/main.6e807b18.chunk.css",
-    "static/js/main.a9ce62f6.chunk.js"
+    "static/js/2.810a7d43.chunk.js",
+    "static/css/main.49084fce.chunk.css",
+    "static/js/main.9649e958.chunk.js"
   ]
 }
