@@ -5,7 +5,7 @@ const qlStyle = {
     position: 'sticky',
     top: '0px',
     backgroundColor: 'var(--bg-color1)',
-    zIndex: '999'
+    zIndex: '10'
 }
 
 const QuickLaunch = () => {

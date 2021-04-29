@@ -1,10 +1,21 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+import Downloads from './Downloads'
 import './Sidecontent.css'
 
-const Sidecontent = (props) => {
+const Sidecontent = ({ children, state, setState }) => {
+
+    const onClick = () => setState({ ...state, isDownloadActive: false });
+
     return (
         <div className="sidecontent">
-            {props.children}
+            { state.isDownloadActive && (
+                <Fragment>
+                    <Downloads />
+                    <span className="shadow" onClick={onClick}></span>
+                </Fragment>
+            )}
+
+            {children}
         </div>
     )
 }

@@ -10,7 +10,7 @@
     padding: 0 1.5em 1.5em 1.5em;
     height: 90vh;
     width: 350px;
-    z-index: 999;
+    z-index: 100;
     top: 3em;
     right: 2em;
 }

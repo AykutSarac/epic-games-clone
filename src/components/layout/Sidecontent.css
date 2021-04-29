@@ -1,6 +1,5 @@
 .sidecontent {
-    border-left: var(--bg-color3) solid 1px;
-    margin-top: 2em;
+    position: relative;
     padding: 3em 2em;
     min-height: 100vh;
 }

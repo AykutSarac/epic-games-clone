@@ -1,0 +1,48 @@
+.downloads {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: var(--bg-color4);
+    color: #a0a0a0;
+    width: 30rem;
+    height: 100vh;
+    transform: translate(15.4rem);
+    z-index: 20;
+    display: block;
+    animation: barSlide .2s;
+    padding: 4em 2em;
+}
+
+.downloads .updating {
+    padding-bottom: 3em;
+    margin-bottom: 1em;
+    border-bottom: var(--bg-color3) solid 1px;
+}
+
+.downloads .updating span {
+    margin-left: 1em;
+}
+
+span.shadow {
+    position: fixed;
+    content: '';
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    cursor: pointer;
+}
+
+
+@keyframes barSlide {
+    0% { clip-path: polygon(0 0, 0 0, 0 100%, 0 100%); }
+    100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+}
+
+@media only screen and (max-width: 968px) {
+    .downloads {
+        display: none;
+    }
+}

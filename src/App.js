@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Sidebar from './components/layout/Sidebar';
 import Sidecontent from './components/layout/Sidecontent';
@@ -12,11 +12,16 @@ import './App.css';
 
 
 function App() {
+
+  const [state, setState] = useState({
+    isDownloadActive: false
+  });
+
   return (
     <Router basename={process.env.PUBLIC_URL}>
       <div className="App">
-        <Sidebar />
-        <Sidecontent>
+        <Sidebar state={state} setState={setState} />
+        <Sidecontent state={state} setState={setState}>
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/store" component={Store} />

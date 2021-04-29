@@ -1,16 +1,18 @@
 .sidebar-wrapper {
     position: relative;
-    height: 100%;
-    padding: 1em 1.5em 2em 3em;
-    margin-top: 2em;
-    width: 10rem;
+    padding: 0 1.5em 2em 3em;
+    width: 13rem;
     font-size: .8rem;
 }
 
 .sidebar {
+    padding-top: 3em;
     position: fixed;
     white-space: nowrap;
     height: 100%;
+    width: 13rem;
+    border-right: var(--bg-color4) solid 1px;
+    z-index: 100;
 }
 
 @media only screen and (max-width: 968px) {
@@ -58,7 +60,7 @@
     color: white;
 }
 
-.sidebar li:hover span, .sidebar li:hover svg, .sidebar li:hover img {
+.sidebar li:hover :is(span, svg, img) {
     filter: invert(100%);
 }
 
@@ -80,7 +82,7 @@
     transition: 0.2s;
 }
 
-.sidebar li img, .sidebar li svg, .sidebar li span {
+.sidebar li :is(img, svg, span) {
     transition: 0.2s;
     margin-right: 2.5em;
     margin-left: 5px;
