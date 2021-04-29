@@ -1,7 +1,8 @@
 import {
     SET_USER,
     TOGGLE_FRIENDLIST,
-    TOGGLE_DOWNLOADS
+    TOGGLE_DOWNLOADS,
+    SET_FRIEND
 } from './types'
 
 export const toggleFriendlist = (value) => (dispatch) => {
@@ -23,6 +24,14 @@ export const toggleDownloads = (value) => (dispatch) => {
 export const setUser = (data) => (dispatch) => {
     dispatch({
         type: SET_USER,
+        payload: data
+    });
+}
+
+export const setFriends = (data) => (dispatch) => {
+    
+    dispatch({
+        type: SET_FRIEND,
         payload: data
     });
 }

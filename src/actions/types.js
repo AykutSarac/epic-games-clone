@@ -1,3 +1,4 @@
 export const TOGGLE_FRIENDLIST = 'TOGGLE_FRIENDLIST';
 export const TOGGLE_DOWNLOADS = 'TOGGLE_DOWNLOADS';
 export const SET_USER = 'SET_USER';
+export const SET_FRIEND = 'SET_FRIEND';

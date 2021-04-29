@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react'
 import './Friendlist.css'
 import { SEARCH } from '../../assets'
 import { useHistory } from 'react-router'
+import { connect } from 'react-redux'
+import { setFriends } from '../../actions/layoutActions'
 
-const Friendlist = () => {
+const Friendlist = ({ friends, setFriends, user }) => {
 
     const history = useHistory();
     const style = history.location.pathname === '/' ? 0 : 1;
@@ -12,31 +14,18 @@ const Friendlist = () => {
         { height: '80vh', top: '7em'}
     ]
 
-
     const [search, setSearch] = useState('');
     const [toggle, setToggle] = useState(true);
-    const [friendlist, setFriendlist] = useState([
-        { username: 'AykutSrch', status: 'online', you: true, color: 'darkviolet' },
-        { username: 'Shimekato', status: 'online', color: 'orange' },
-        { username: 'fulldoly1', status: 'offline', color: 'olive' },
-        { username: 'KDM_Bifors', status: 'offline', color: 'darkviolet' },
-        { username: 'Fnatic_Flayra', status: 'offline', color: 'darkviolet' },
-        { username: 'LapuLapu53', status: 'offline', color: 'olive' },
-        { username: 'RealBillGates', status: 'offline', color: 'darkviolet' },
-        { username: 'FortniteKid007', status: 'online', color: 'olive' }
-    ]);
-
 
     useEffect(() => {
         const interval = setInterval(() => {
-            const index = Math.floor(Math.random() * friendlist.length);
-            setFriendlist(friendlist.map((user, i) => {
-                if (i === index && !user.you) return { ...user, status: user.status === 'online' ? 'offline' : 'online' }
-                return user;
-            }))
+            const index = Math.floor(Math.random() * friends.length);
+
+            const status = friends[index].status === 'online' ? 'offline' : 'online'
+            setFriends({ ...friends[index], status });
         }, 10000);
         return () => clearInterval(interval);
-    }, [friendlist, history]);
+    }, [friends, history, setFriends]);
 
     const onToggle = () => setToggle(!toggle);
     const onChange = (e) => setSearch(e.target.value);
@@ -70,19 +59,24 @@ const Friendlist = () => {
 
             <div className="userlistwrapper">
                 <div className="userlist" style={style === 0 ? {height: '65vh'} : {height: '55vh'}}>
-                    <p>Online {`(${friendlist.filter(user => user.status === 'online').length})`}</p>
+                    <p>Online {`(${friends.filter(user => user.status === 'online').length + 1})`}</p>
                     <ul>
-                        {friendlist.filter(user => user.status === 'online').map((user, index) => (
+                        <li>
+                            <span className="icon online" style={{backgroundColor: user.color}}>{user.username[0]}</span>
+                            {user.username} <span className="you">YOU</span>
+                            <span className="status">{user.status[0].toUpperCase() + user.status.slice(1)}</span>
+                        </li>
+                        {friends.filter(user => user.status === 'online').map((user, index) => (
                             <li key={index}>
                                 <span className={`icon ${user.status}`} style={{ background: user.color }}>{user.username[0]}</span>
-                                {user.username} { user.you && <span className="you">YOU</span>}
+                                {user.username}
                                 <span className="status">{user.status[0].toUpperCase() + user.status.slice(1)}</span>
                             </li>
                         ))}
                     </ul>
                     <p>Friends</p>
                     <ul>
-                        {friendlist.filter(user => !user.you && user.username.toLowerCase().includes(search.toLowerCase())).sort(sortList).map((user, index) => (
+                        {friends.filter(user => !user.you && user.username.toLowerCase().includes(search.toLowerCase())).sort(sortList).map((user, index) => (
                             <li key={index}>
                                 <span className={`icon ${user.status}`} style={{ background: user.color }}>{user.username[0].toUpperCase()}</span>
                                 {user.username}
@@ -100,4 +94,9 @@ const Friendlist = () => {
     )
 }
 
-export default Friendlist
+const mapStateToProps = (state) => ({
+    friends: state.layout.friends,
+    user: state.layout.user
+});
+
+export default connect(mapStateToProps, { setFriends })(Friendlist)
