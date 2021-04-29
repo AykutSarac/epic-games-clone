@@ -1,10 +1,13 @@
 import React from 'react'
 import './StoreNavbar.css'
-import friends from '../../assets/News/friends.png'
+import friendsIcon from '../../assets/News/friends.png'
 import { connect } from 'react-redux'
 import { toggleFriendlist } from '../../actions/layoutActions'
 
-const StoreNavbar = ({ toggleFriendlist }) => {
+const StoreNavbar = ({ toggleFriendlist, friends }) => {
+
+    const onlineCount = friends.filter(u => u.status === 'online').length;
+
     return (
         <nav className="storeNavbar">
             <ul className="primary-nav">
@@ -18,11 +21,15 @@ const StoreNavbar = ({ toggleFriendlist }) => {
                     <input type="search" placeholder="Search" />
                 </li>
                 <li>
-                    <span className="icon" style={{ backgroundImage: `url(${friends})` }} onClick={toggleFriendlist}>1</span>
+                    <span className="icon" style={{ backgroundImage: `url(${friendsIcon})` }} onClick={toggleFriendlist}>{onlineCount}</span>
                 </li>
             </ul>
         </nav>
     )
 }
 
-export default connect(null, { toggleFriendlist })(StoreNavbar)
+const mapStateToProps = (state) => ({
+    friends: state.layout.friends
+});
+
+export default connect(mapStateToProps, { toggleFriendlist })(StoreNavbar)
