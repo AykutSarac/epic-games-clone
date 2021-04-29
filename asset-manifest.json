@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/epic-games-clone/static/css/main.49084fce.chunk.css",
-    "main.js": "/epic-games-clone/static/js/main.bdcac6fe.chunk.js",
-    "main.js.map": "/epic-games-clone/static/js/main.bdcac6fe.chunk.js.map",
+    "main.js": "/epic-games-clone/static/js/main.f4c5121c.chunk.js",
+    "main.js.map": "/epic-games-clone/static/js/main.f4c5121c.chunk.js.map",
     "runtime-main.js": "/epic-games-clone/static/js/runtime-main.e758fc61.js",
     "runtime-main.js.map": "/epic-games-clone/static/js/runtime-main.e758fc61.js.map",
     "static/js/2.52f85586.chunk.js": "/epic-games-clone/static/js/2.52f85586.chunk.js",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.e758fc61.js",
     "static/js/2.52f85586.chunk.js",
     "static/css/main.49084fce.chunk.css",
-    "static/js/main.bdcac6fe.chunk.js"
+    "static/js/main.f4c5121c.chunk.js"
   ]
 }
