@@ -4,12 +4,13 @@ import { Link, NavLink } from 'react-router-dom'
 import * as ICON from '../../assets'
 import { ReactComponent as GearIcon } from '../../assets/Sidebar/gear.svg'
 import { ReactComponent as ProfileIcon } from '../../assets/Sidebar/profile.svg'
+import { toggleDownloads } from '../../actions/layoutActions'
+import { connect } from 'react-redux'
 
 
-const Sidebar = ({ setState, state }) => {
+const Sidebar = ({ toggleDownloads, displayDownloads }) => {
 
-    const onClick = () =>  setState({...state, isDownloadActive: !state.isDownloadActive});
-    const onClose = () => state.isDownloadActive && setState({...state, isDownloadActive: false});
+    const onClose = () => displayDownloads && toggleDownloads(false);
 
     return (
         <div className="sidebar-wrapper">
@@ -26,7 +27,7 @@ const Sidebar = ({ setState, state }) => {
                         <li><NavLink activeClassName="current" to="/uengine"><img className="icon" src={ICON.UNREAL} height="20" width="20" alt="unreal engine" />Unreal Engine</NavLink></li>
                     </ul>
                     <ul className="secondary-nav" onClick={onClose}>
-                        <li><a href="#downloads" onClick={onClick}><img src={ICON.DOWNLOAD} className="icon" alt="download icon" />Downloads</a></li>
+                        <li><a href="#downloads" onClick={toggleDownloads}><img src={ICON.DOWNLOAD} className="icon" alt="download icon" />Downloads</a></li>
                         <li><a href="#settings"><GearIcon className="icon" />Settings</a></li>
                         <li className="icon-profile"><a href="#profile"><ProfileIcon className="icon" />AykutSrch</a></li>
                     </ul>
@@ -36,4 +37,8 @@ const Sidebar = ({ setState, state }) => {
     )
 }
 
-export default Sidebar
+const mapStateToProps = (state) => ({
+    displayDownloads: state.layout.displayDownloads
+});
+
+export default connect(mapStateToProps, { toggleDownloads })(Sidebar)

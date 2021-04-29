@@ -1,5 +1,6 @@
 import React from 'react'
 import './StoreNavbar.css'
+import friends from '../../assets/News/friends.png'
 
 const StoreNavbar = () => {
     return (
@@ -15,7 +16,7 @@ const StoreNavbar = () => {
                     <input type="search" placeholder="Search" />
                 </li>
                 <li>
-                    <span className="icon icon-friends">1</span>
+                    <span className="icon" style={{ backgroundImage: `url(${friends})` }}>1</span>
                 </li>
             </ul>
         </nav>

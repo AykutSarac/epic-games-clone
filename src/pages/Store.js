@@ -1,15 +1,15 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import StoreSlider from '../components/Store/StoreSlider'
 import StoreNavbar from '../components/Store/StoreNavbar'
 import StoreSales from '../components/Store/StoreSales'
 
 const Store = () => {
     return (
-        <Fragment>
+        <div>
             <StoreNavbar />
             <StoreSlider />
             <StoreSales />
-        </Fragment>
+        </div>
     )
 }
 

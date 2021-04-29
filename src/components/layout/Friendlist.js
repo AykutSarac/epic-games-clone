@@ -1,8 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import './Friendlist.css'
 import { SEARCH } from '../../assets'
+import { useHistory } from 'react-router'
 
 const Friendlist = () => {
+
+    const history = useHistory();
+    const style = history.location.pathname === '/' ? 0 : 1;
+    const styles = [
+        { height: '90vh', top: '3em' },
+        { height: '80vh', top: '7em'}
+    ]
+
 
 
     const [search, setSearch] = useState('');
@@ -28,7 +37,7 @@ const Friendlist = () => {
             }))
         }, 10000);
         return () => clearInterval(interval);
-    });
+    }, [friendlist, history]);
 
     const onToggle = () => setToggle(!toggle);
     const onChange = (e) => setSearch(e.target.value);
@@ -42,26 +51,26 @@ const Friendlist = () => {
     }
 
     return (
-        <div className="friendlist-wrapper">
-            <div className="friendlist">
-                <div className="menu">
-                    <div className="icons">
-                        <span className="icon icon-notification"></span>
-                        <span className="icon icon-settings"></span>
-                    </div>
-                    <div className="toggle-menu">
-                        <input type="radio" name="type" id="friends" onChange={onToggle} checked={toggle} />
-                        <label htmlFor="friends">Friends</label>
-                        <input type="radio" name="type" id="requests" onChange={onToggle} checked={!toggle} />
-                        <label htmlFor="requests">Requests</label>
-                    </div>
-                    <div className="search">
-                        <input type="search" placeholder="Search or add players"  onChange={onChange} />
-                        <span className="search-btn" style={{ backgroundImage: `url(${SEARCH})` }}></span>
-                    </div>
+        <div className="friendlist" style={styles[style]}>
+            <div className="menu">
+                <div className="icons">
+                    <span className="icon icon-notification"></span>
+                    <span className="icon icon-settings"></span>
                 </div>
+                <div className="toggle-menu">
+                    <input type="radio" name="type" id="friends" onChange={onToggle} checked={toggle} />
+                    <label htmlFor="friends">Friends</label>
+                    <input type="radio" name="type" id="requests" onChange={onToggle} checked={!toggle} />
+                    <label htmlFor="requests">Requests</label>
+                </div>
+                <div className="search">
+                    <input type="search" placeholder="Search or add players" onChange={onChange} />
+                    <span className="search-btn" style={{ backgroundImage: `url(${SEARCH})` }}></span>
+                </div>
+            </div>
 
-                <div className="userlist">
+            <div className="userlistwrapper">
+                <div className="userlist" style={style === 0 ? {height: '65vh'} : {height: '55vh'}}>
                     <p>Online {`(${friendlist.filter(user => user.status === 'online').length})`}</p>
                     <ul>
                         {friendlist.filter(user => user.status === 'online').map((user, index) => (
@@ -74,7 +83,7 @@ const Friendlist = () => {
                     </ul>
                     <p>Friends</p>
                     <ul>
-                        {friendlist.filter(user =>  !user.you && user.username.toLowerCase().includes(search.toLowerCase())).sort(sortList).map((user, index) => (
+                        {friendlist.filter(user => !user.you && user.username.toLowerCase().includes(search.toLowerCase())).sort(sortList).map((user, index) => (
                             <li key={index}>
                                 <span className={`icon ${user.status}`} style={{ background: user.color }}>{user.username[0].toUpperCase()}</span>
                                 {user.username}
@@ -83,10 +92,11 @@ const Friendlist = () => {
                         ))}
                     </ul>
                 </div>
-                <div className="connect">
-                    <a href="!#">Connect your social account</a> to find friends on Epic<br/>Games!
-                </div>
             </div>
+
+            <div className="connect">
+                <a href="!#">Connect your social account</a> to find friends on Epic<br />Games!
+                </div>
         </div>
     )
 }

@@ -36,3 +36,17 @@
     width: 200px;
     padding: .8em;
 }
+
+
+.libraryNavbar .icon {
+    padding-right: 50px;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: invert(70%);
+}
+
+.libraryNavbar .icon:hover {
+    filter: invert(100%);
+    color: black;
+    cursor: pointer;
+}

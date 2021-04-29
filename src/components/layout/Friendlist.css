@@ -1,4 +1,4 @@
-.friendlist-wrapper {
+.friendlist {
     position: relative;
 }
 
@@ -8,14 +8,12 @@
     border: var(--color2) solid 2px;
     border-radius: 10px;
     padding: 0 1.5em 1.5em 1.5em;
-    height: 90vh;
     width: 350px;
     z-index: 100;
-    top: 3em;
     right: 2em;
 }
 
-.friendlist-wrapper input[type="radio"] {
+.friendlist input[type="radio"] {
     opacity: 0;
     position: fixed;
     width: 0;
@@ -30,18 +28,18 @@
     white-space: nowrap;
 }
 
-.friendlist-wrapper label {
+.friendlist label {
     padding: .5em 2.5em;
     cursor: pointer;
     color: var(--color2);
     transition: 0.2s;
 }
 
-.friendlist-wrapper label:hover {
+.friendlist label:hover {
     color: rgb(172, 172, 172);
 }
 
-.friendlist-wrapper input[type="radio"]:checked + label {
+.friendlist input[type="radio"]:checked + label {
     background-color: rgb(68, 68, 68);
     border-radius: 15px;
     color: white;
@@ -89,7 +87,6 @@
 
 .userlist {
     position: relative;
-    height: 65vh;
     overflow-y: scroll;
 }
 
@@ -169,7 +166,7 @@
 }
 
 @media only screen and (max-width: 968px) {
-    .friendlist-wrapper {
+    .friendlist {
         display: none;
     }
 }
