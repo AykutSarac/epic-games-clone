@@ -13,7 +13,6 @@ const Friendlist = () => {
     ]
 
 
-
     const [search, setSearch] = useState('');
     const [toggle, setToggle] = useState(true);
     const [friendlist, setFriendlist] = useState([

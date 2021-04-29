@@ -1,15 +1,11 @@
 .friendlist {
-    position: relative;
-}
-
-.friendlist {
     position: fixed;
     background: var(--bg-color2);
     border: var(--color2) solid 2px;
     border-radius: 10px;
     padding: 0 1.5em 1.5em 1.5em;
     width: 350px;
-    z-index: 100;
+    z-index: 999;
     right: 2em;
 }
 
