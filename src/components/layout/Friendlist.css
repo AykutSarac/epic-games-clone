@@ -16,6 +16,21 @@
     width: 0;
 }
 
+.friendlist .clear {
+    position: absolute;
+    right: 3em;
+    margin: 0;
+    padding: 0;
+    color: #a0a0a0;
+    font-weight: bold;
+    font-size: .8rem;
+    cursor: pointer;
+    background: transparent;
+    outline: none;
+    border: none;
+    align-self: center;
+}
+
 .toggle-menu {
     background: rgb(34, 34, 34);
     border-radius: 50px;
@@ -44,42 +59,40 @@
 
 .search {
     display: flex;
-    flex-direction: row;
     margin: 0 0 1em;
 }
 
-.search input[type="search"] {
+.search .searchinput {
     border: var(--bg-color5) solid;
-    border-width: 1px 0 1px 1px;
+    border-width: 1px;
     font-weight: bold;
     color: var(--color2);
-    border-radius: 5px 0 0 5px;
+    border-radius: 5px;
     font-size: 14px;
     padding: 0.8em;
-    width: 90%;
+    width: 100%;
     background: transparent;
     outline: none;
 }
 
-.search input[type="search"]:focus, input[type="search"]:focus + .search-btn {
+.search .searchinput:focus, .searchinput:focus + .search-btn {
     border-color: #fff;
     transition: 0.4s;
 }
 
-.search input[type="search"]::placeholder {
+.search .searchinput::placeholder {
     color: var(--color2);
 }
 
 .search-btn {
-    border-color: var(--bg-color5);
-    border-style: solid;
-    border-radius: 0 5px 5px 0;
-    border-width: 1px 1px 1px 0;
-    background-repeat: no-repeat;
+    position: absolute;
+    right: 3em;
+    align-self: center;
+    height: 25px;
+    width: 25px;
     background-size: 20px;
+    background-repeat: no-repeat;
     background-position: center;
-    padding-right: 2em;
-    width: 30px;
 }
 
 .userlist {
@@ -122,6 +135,37 @@
     border: var(--bg-color2) solid 2px;
 }
 
+.friendlist .icons {
+    position: relative;
+    text-align: right;
+    margin-top: 1em;
+    height: 1em;
+}
+
+.friendlist .menu .icon {
+    cursor: pointer;
+    margin-left: 1em;
+    display: inline-block;
+    filter: invert(100%);
+    height: 15px;
+    width: 15px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 15px;
+}
+
+.friendlist .icons .icon-bell {
+    animation: bellRing 1s;
+}
+
+@keyframes bellRing {
+    0% { transform: rotate(25deg); }
+    25% { transform: rotate(-25deg)}
+    50% { transform: rotate(25deg)}
+    75% { transform: rotate(-25deg);}
+    100% { transform: rotate(0deg); }
+}
+
 .userlist .icon.online::after {
     background: lime;
 }
@@ -151,6 +195,7 @@
 }
 
 .connect {
+    background: var(--bg-color2);
     padding: 1em 3em;
     text-align: left;
     border-top: var(--color2) solid 1px;

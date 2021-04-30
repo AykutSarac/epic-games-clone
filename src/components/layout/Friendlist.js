@@ -3,6 +3,8 @@ import './Friendlist.css'
 import { SEARCH } from '../../assets'
 import { useHistory } from 'react-router'
 import { connect } from 'react-redux'
+import bellIcon from '../../assets/News/bell.png'
+import settingsIcon from '../../assets/Sidebar/gear.svg'
 
 const Friendlist = ({ friends, user }) => {
 
@@ -18,6 +20,7 @@ const Friendlist = ({ friends, user }) => {
 
     const onToggle = () => setToggle(!toggle);
     const onChange = (e) => setSearch(e.target.value);
+    const clearSearch = () => setSearch('');
 
     const sortList = (a, b) => {
         if (a.status === 'online') {
@@ -31,8 +34,8 @@ const Friendlist = ({ friends, user }) => {
         <div className="friendlist" style={styles[style]}>
             <div className="menu">
                 <div className="icons">
-                    <span className="icon icon-notification"></span>
-                    <span className="icon icon-settings"></span>
+                    <span className="icon icon-bell" style={{ backgroundImage: `url(${bellIcon})`}}></span>
+                    <img src={settingsIcon} className="icon" alt="settings"/>
                 </div>
                 <div className="toggle-menu">
                     <input type="radio" name="type" id="friends" onChange={onToggle} checked={toggle} />
@@ -41,8 +44,8 @@ const Friendlist = ({ friends, user }) => {
                     <label htmlFor="requests">Requests</label>
                 </div>
                 <div className="search">
-                    <input type="search" placeholder="Search or add players" onChange={onChange} />
-                    <span className="search-btn" style={{ backgroundImage: `url(${SEARCH})` }}></span>
+                    <input className="searchinput" type="text" placeholder={ toggle ? 'Search or add players' : 'Filter friend requests'} onChange={onChange} value={search} />
+                    { search.length > 0 ? <button className="clear" onClick={clearSearch}>CLEAR</button> : <span className="search-btn" style={{ backgroundImage: `url(${SEARCH})` }}></span>} 
                 </div>
             </div>
 
@@ -78,7 +81,7 @@ const Friendlist = ({ friends, user }) => {
                 </div>
             </div>
                 ) : 
-                ("hi")
+                null
             }
             
 

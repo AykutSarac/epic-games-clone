@@ -20,7 +20,8 @@ const initialState = {
         { username: 'Fnatic_Flayra', status: 'offline', color: 'darkviolet', _id: '4' },
         { username: 'LapuLapu53', status: 'offline', color: 'olive', _id: '5' },
         { username: 'RealBillGates', status: 'offline', color: 'darkviolet', _id: '6' },
-        { username: 'FortniteKid007', status: 'online', color: 'olive', _id: '7' }
+        { username: 'FortniteKid007', status: 'online', color: 'olive', _id: '7' },
+        { username: 'Purces', status: 'offline', color: 'darkviolet', _id: '8' }
     ]
 }
 
