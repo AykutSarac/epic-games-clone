@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import './Friendlist.css'
 import { SEARCH } from '../../assets'
 import { useHistory } from 'react-router'
 import { connect } from 'react-redux'
-import { setFriends } from '../../actions/layoutActions'
 
-const Friendlist = ({ friends, setFriends, user }) => {
+const Friendlist = ({ friends, user }) => {
 
     const history = useHistory();
     const style = history.location.pathname === '/' ? 0 : 1;
@@ -16,16 +15,6 @@ const Friendlist = ({ friends, setFriends, user }) => {
 
     const [search, setSearch] = useState('');
     const [toggle, setToggle] = useState(true);
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            const index = Math.floor(Math.random() * friends.length);
-
-            const status = friends[index].status === 'online' ? 'offline' : 'online'
-            setFriends({ ...friends[index], status });
-        }, 10000);
-        return () => clearInterval(interval);
-    }, [friends, history, setFriends]);
 
     const onToggle = () => setToggle(!toggle);
     const onChange = (e) => setSearch(e.target.value);
@@ -99,4 +88,4 @@ const mapStateToProps = (state) => ({
     user: state.layout.user
 });
 
-export default connect(mapStateToProps, { setFriends })(Friendlist)
+export default connect(mapStateToProps, null)(Friendlist)

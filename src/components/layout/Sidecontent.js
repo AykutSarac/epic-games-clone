@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { connect } from "react-redux";
 import { useLocation } from 'react-router';
 import { toggleDownloads, toggleFriendlist } from '../../actions/layoutActions'
@@ -13,11 +13,19 @@ const Sidecontent = ({ displayFriendlist, displayDownloads, toggleDownloads, tog
     const closeDownloads = () => toggleDownloads(false);
     const closeFriends = () => toggleFriendlist(false);
 
+    useEffect(() => {
+        if (displayFriendlist && pathname !== '/') {
+            document.body.style.overflowY = 'hidden';
+        } else {
+            document.body.style.overflowY = 'unset';
+        }
+    }, [displayFriendlist, pathname]);
+
     return (
         <div className="sidecontent">
-            { (displayDownloads) && <span className="shadow" onClick={closeDownloads}></span> }
-            { (displayFriendlist && pathname !== '/') && <span className="shadow" onClick={closeFriends}></span> }
-            { displayDownloads && <Downloads /> }
+            { (displayDownloads) && <span className="shadow" onClick={closeDownloads}></span>}
+            { (displayFriendlist && pathname !== '/') && <span className="shadow" onClick={closeFriends}></span>}
+            { displayDownloads && <Downloads />}
             {children}
             { displayFriendlist && <Friendlist />}
         </div>

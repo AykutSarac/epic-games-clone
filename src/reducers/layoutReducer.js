@@ -14,13 +14,13 @@ const initialState = {
         color: 'darkviolet'
     },
     friends: [
-        { username: 'Shimekato', status: 'online', color: 'orange' },
-        { username: 'fulldoly1', status: 'offline', color: 'olive' },
-        { username: 'KDM_Bifors', status: 'offline', color: 'darkviolet' },
-        { username: 'Fnatic_Flayra', status: 'offline', color: 'darkviolet' },
-        { username: 'LapuLapu53', status: 'offline', color: 'olive' },
-        { username: 'RealBillGates', status: 'offline', color: 'darkviolet' },
-        { username: 'FortniteKid007', status: 'online', color: 'olive' }
+        { username: 'Shimekato', status: 'online', color: 'orange', _id: '1' },
+        { username: 'fulldoly1', status: 'offline', color: 'olive', _id: '2' },
+        { username: 'KDM_Bifors', status: 'offline', color: 'darkviolet', _id: '3' },
+        { username: 'Fnatic_Flayra', status: 'offline', color: 'darkviolet', _id: '4' },
+        { username: 'LapuLapu53', status: 'offline', color: 'olive', _id: '5' },
+        { username: 'RealBillGates', status: 'offline', color: 'darkviolet', _id: '6' },
+        { username: 'FortniteKid007', status: 'online', color: 'olive', _id: '7' }
     ]
 }
 
