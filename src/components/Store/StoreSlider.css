@@ -17,6 +17,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 4px 0 0 4px;
+    transition: 1s cubic-bezier(0.86, 0, 0.07, 1);
 }
 
 .featured .buttons {

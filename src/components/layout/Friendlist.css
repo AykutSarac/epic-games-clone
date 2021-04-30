@@ -7,6 +7,7 @@
     width: 350px;
     z-index: 999;
     right: 2em;
+    overflow: hidden;
 }
 
 .friendlist input[type="radio"] {
@@ -153,8 +154,11 @@
     padding: 1em 3em;
     text-align: left;
     border-top: var(--color2) solid 1px;
-    margin: auto -1.5em;
     font-size: 12px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
 }
 
 .connect a {

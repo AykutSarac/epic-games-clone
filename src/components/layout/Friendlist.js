@@ -46,7 +46,9 @@ const Friendlist = ({ friends, user }) => {
                 </div>
             </div>
 
-            <div className="userlistwrapper">
+            {
+                toggle ? (
+<div className="userlistwrapper">
                 <div className="userlist" style={style === 0 ? {height: '65vh'} : {height: '55vh'}}>
                     <p>Online {`(${friends.filter(user => user.status === 'online').length + 1})`}</p>
                     <ul>
@@ -75,6 +77,10 @@ const Friendlist = ({ friends, user }) => {
                     </ul>
                 </div>
             </div>
+                ) : 
+                ("hi")
+            }
+            
 
             <div className="connect">
                 <a href="!#">Connect your social account</a> to find friends on Epic<br />Games!

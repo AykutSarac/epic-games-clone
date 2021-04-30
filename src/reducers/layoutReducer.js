@@ -6,7 +6,7 @@ import {
 } from '../actions/types'
 
 const initialState = {
-    displayFriendlist: true,
+    displayFriendlist: false,
     displayDownloads: false,
     user: {
         username: 'AykutSrch',
