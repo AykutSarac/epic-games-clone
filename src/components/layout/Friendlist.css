@@ -21,7 +21,7 @@
     right: 3em;
     margin: 0;
     padding: 0;
-    color: #a0a0a0;
+    color: var(--color3);
     font-weight: bold;
     font-size: .8rem;
     cursor: pointer;
@@ -184,14 +184,14 @@
 }
 
 .userlist p {
-    color: #a0a0a0;
+    color: var(--color3);
     font-weight: bold;
 }
 
 .userlist .status {
     font-weight: normal;
     display: block;
-    color: #a0a0a0;
+    color: var(--color3);
 }
 
 .connect {

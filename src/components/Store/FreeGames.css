@@ -1,0 +1,84 @@
+.freegames {
+    background: #2a2a2a;
+    padding: 2em 3em;
+    border-radius: 5px;
+}
+
+.freegames .flexheader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5em;
+}
+
+.freegames svg {
+    filter: invert(0%);
+    transform: scale(1.7);
+    width: 2rem;
+    margin-right: .5em;
+}
+
+.freegames .btn-outline {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    border: var(--color3) solid 1px;
+    padding: .6em 1.2em;
+    font-size: .8rem;
+    border-radius: 5px;
+    transition: 0.2s;
+}
+
+.freegames .btn-outline:hover {
+    background: rgb(80, 80, 80);
+}
+
+.freegames .game {
+    text-decoration: none;
+    color: var(--color3);
+    line-height: 20px;
+}
+
+.freegames .gameimg {
+    position: relative;
+}
+
+.freegames .game.freenow .gameimg::before {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background: rgb(0, 119, 255);
+    content: 'FREE NOW';
+    text-align: center;
+    color: white;
+    font-size: 12px;
+    letter-spacing: 1px;
+    border-radius: 0 0 5px 5px;
+    padding: 2px 0;
+    font-weight: bold;
+}
+
+.freegames :is(h1, h4) {
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-weight: normal;
+}
+
+.freegames .flex {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 1.5em;
+}
+
+.freegames .flextext {
+    margin-top: 1em;
+}
+
+.freegames img {
+    border-radius: 5px;
+    width: 100%;
+    height: auto;
+}

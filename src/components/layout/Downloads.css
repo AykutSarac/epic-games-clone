@@ -3,7 +3,7 @@
     top: 0;
     left: 0;
     background: var(--bg-color4);
-    color: #a0a0a0;
+    color: var(--color3);
     width: 30rem;
     height: 100vh;
     transform: translate(15.4rem);

@@ -10,7 +10,7 @@
     justify-content: center;
     flex-direction: column;
     text-decoration: none;
-    color: #a0a0a0;
+    color: var(--color3);
 }
 
 .library .shop .icon-store {

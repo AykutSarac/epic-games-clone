@@ -24,7 +24,7 @@
 }
 
 .saleslist .author {
-    color: #a0a0a0;
+    color: var(--color3);
 }
 
 .saleslist .pricetag {
@@ -36,7 +36,7 @@
 }
 
 .saleslist .oldprice {
-    color: #a0a0a0;
+    color: var(--color3);
     text-decoration: line-through;
 }
 
