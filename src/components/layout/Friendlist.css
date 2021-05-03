@@ -11,15 +11,12 @@
 .friendlist .wrap {
     position: relative;
     overflow: hidden;
+    min-height: 99%;
+    height: 99%;
 }
 
 .friendlist .upper {
     padding: 0 1.5em 1.5em 1.5em;
-}
-
-.friendlist .lower {
-    overflow: hidden;
-    width: 100%;
 }
 
 .friendlist input[type="radio"] {
@@ -207,16 +204,20 @@
 }
 
 .connect {
+    position: absolute;
+    text-align: center;
     background: var(--bg-color4);
-    padding: 1em 3em 1em;
-    margin-bottom: 1em;
+    padding: .5em 3em 0;
     text-align: left;
     border-top: var(--color2) solid 1px;
     font-size: 12px;
     width: 100%;
-    position: absolute;
     left: 0;
     bottom: 0;
+}
+
+.connect p {
+    width: 90%;
 }
 
 .connect a {
