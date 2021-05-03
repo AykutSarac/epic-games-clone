@@ -86,7 +86,7 @@ const Friendlist = ({ friends, user }) => {
             
 
             <div className="connect">
-                <a href="!#">Connect your social account</a> to find friends on Epic<br />Games!
+                <a href="#!">Connect your social account</a> to find friends on Epic<br />Games!
                 </div>
         </div>
     )

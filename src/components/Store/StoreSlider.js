@@ -20,9 +20,10 @@ const StoreSlider = () => {
 
     // Change current slide
     const onClick = (e) => {
-        let value = parseInt(e.target.id);
+        let value = parseInt(e.target.closest('div').id);
         if (value !== counter) setCounter(value);
     }
+
 
     return (
         <div className="slider-wrapper">
@@ -30,16 +31,16 @@ const StoreSlider = () => {
                 <div className="item-text">
                     <h3>{gameList[counter].title}</h3>
                     <div className="buttons">
-                        <a href="!#" className="btn btn-download">DOWNLOAD NOW</a>
-                        <a href="!#" className="btn btn-wishlist">+</a>
+                        <a href="#!" className="btn btn-download">DOWNLOAD NOW</a>
+                        <a href="#!" className="btn btn-wishlist">+</a>
                     </div>
                 </div>
 
             </div>
             <ul className="gamelist">
                 {gameList.map((game, index) => (
-                    <li key={game._id}>
-                        <div id={index} className={`game ${index === counter ? 'current' : ''}`} onClick={onClick}>
+                    <li key={game._id} onClick={onClick} style={{ display: 'block' }} >
+                        <div id={index} className={`game ${index === counter ? 'current' : ''}`}>
                             <img src={game._images_[0]} alt="game" />
                        { game.title.split(' ').slice(0, 4).join(' ') }...
                         </div>
