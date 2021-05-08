@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import './Friendlist.css'
 import { SEARCH } from '../../assets'
-import { connect } from 'react-redux'
 import bellIcon from '../../assets/News/bell.png'
 import settingsIcon from '../../assets/Sidebar/gear.svg'
 import { useLocation } from 'react-router'
+import FriendlistUsers from './FriendlistUsers'
 
-const Friendlist = ({ friends, user }) => {
+const Friendlist = () => {
 
     const { pathname } = useLocation();
 
@@ -27,9 +27,6 @@ const Friendlist = ({ friends, user }) => {
     const onChange = (e) => setSearch(e.target.value);
     const clearSearch = () => setSearch('');
 
-    // Sort friendlist from offline to online
-    const sortList = (a, b) => (a.status === 'online') ? 1 : -1;
-
 
     useEffect(() => {
         // Change friendlist style on route
@@ -41,63 +38,32 @@ const Friendlist = ({ friends, user }) => {
         <div className="friendlist" style={styles[style]}>
             <div className="wrap">
                 <div className="upper">
+
                     <div className="menu">
                         <div className="icons">
                             <span className="icon icon-bell" style={{ backgroundImage: `url(${bellIcon})` }}></span>
                             <img src={settingsIcon} className="icon" alt="settings" />
                         </div>
+
                         <div className="toggle-menu">
                             <input type="radio" name="type" id="friends" onChange={onToggle} checked={toggle} />
                             <label htmlFor="friends">Friends</label>
                             <input type="radio" name="type" id="requests" onChange={onToggle} checked={!toggle} />
                             <label htmlFor="requests">Requests</label>
                         </div>
+
                         <div className="search">
                             <input className="searchinput" type="text" placeholder={toggle ? 'Search or add players' : 'Filter friend requests'} onChange={onChange} value={search} />
                             {search.length > 0 ? <button className="clear" onClick={clearSearch}>CLEAR</button> : <span className="search-btn" style={{ backgroundImage: `url(${SEARCH})` }}></span>}
                         </div>
                     </div>
 
-                    {
-                        toggle ? (
-                            <div className="userlistwrapper">
-                                <div className="userlist" style={style === 0 ? { height: '55vh' } : { height: '46vh' }}>
-                                    <p>Online {`(${friends.filter(user => user.status === 'online').length + 1})`}</p>
-                                    <ul>
-                                        <li>
-                                            <span className="icon online" style={{ backgroundColor: user.color }}>{user.username[0]}</span>
-                                            {user.username} <span className="you">YOU</span>
-                                            <span className="status">{user.status[0].toUpperCase() + user.status.slice(1)}</span>
-                                        </li>
-                                        {friends.filter(user => user.status === 'online').map((user, index) => (
-                                            <li key={index} onClick={() => onCurrent(user)}>
-                                                <span className={`icon ${user.status}`} style={{ background: user.color }}>{user.username[0]}</span>
-                                                {user.username}
-                                                <span className="status">{user.status[0].toUpperCase() + user.status.slice(1)}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                    <p>Friends</p>
-                                    <ul>
-                                        {friends.filter(user => !user.you && user.username.toLowerCase().includes(search.toLowerCase())).sort(sortList).map((user, index) => (
-                                            <li key={index} onClick={() => onCurrent(user)}>
-                                                <span className={`icon ${user.status}`} style={{ background: user.color }}>{user.username[0].toUpperCase()}</span>
-                                                {user.username}
-                                                <span className="status">{user.status[0].toUpperCase() + user.status.slice(1)}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            </div>
-                        ) :
-                            null
-                    }
+                    { toggle ? <FriendlistUsers setCurrent={setCurrent} style={style} search={search} /> : null }
+
                 </div>
 
                 <div className="connect">
-                    <p>
-                        <a href="#!">Connect your social account</a> to find friends on Epic
-                Games!</p>
+                    <p><a href="#!">Connect your social account</a> to find friends on EpicGames!</p>
                 </div>
             </div>
 
@@ -107,7 +73,7 @@ const Friendlist = ({ friends, user }) => {
                         <span className="icon-more">...</span>
                         <span className="icon-close" onClick={() => onCurrent(null)}>&times;</span>
                     </div>
-                    <span className={`icon ${current.status}`} style={{ background: user.color }}>{current.username[0].toUpperCase()}</span>
+                    <span className={`icon ${current.status}`} style={{ background: current.color }}>{current.username[0].toUpperCase()}</span>
                     <div className="userinfo">
                         <p>{current.username}</p>
                         <p>{current.status}</p>
@@ -119,9 +85,4 @@ const Friendlist = ({ friends, user }) => {
     )
 }
 
-const mapStateToProps = (state) => ({
-    friends: state.layout.friends,
-    user: state.layout.user
-});
-
-export default connect(mapStateToProps, null)(Friendlist)
+export default Friendlist

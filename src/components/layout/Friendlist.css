@@ -11,17 +11,20 @@
 .friendlist .wrap {
     position: relative;
     overflow: hidden;
-    min-height: 99%;
-    height: 99%;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 8fr 1fr;
 }
 
 .friendlist .upper {
-    padding: 0 1.5em 1.5em 1.5em;
+    position: relative;
+    padding: 0 1.5em 1.5em;    
 }
 
 .friendlist input[type="radio"] {
-    opacity: 0;
     position: fixed;
+    opacity: 0;
     width: 0;
 }
 
@@ -104,9 +107,35 @@
     background-position: center;
 }
 
+.userlistwrapper {
+    position: absolute;
+    float: left;
+    width: 100%;
+    padding-right: 3em;
+}
+
 .userlist {
     position: relative;
     overflow-y: scroll;
+}
+
+.userlist .you {
+    background: var(--bg-color3);
+    border-radius: 5px;
+    font-size: 10px;
+    font-weight: normal;
+    padding: 2px 4px;
+}
+
+.userlist p {
+    color: var(--color3);
+    font-weight: bold;
+}
+
+.userlist .status {
+    font-weight: normal;
+    display: block;
+    color: var(--color3);
 }
 
 .userlist ul {
@@ -184,36 +213,19 @@
     background: grey;
 }
 
-.userlist .you {
-    background: var(--bg-color3);
-    border-radius: 5px;
-    font-size: 10px;
-    font-weight: normal;
-    padding: 2px 4px;
-}
-
-.userlist p {
-    color: var(--color3);
-    font-weight: bold;
-}
-
-.userlist .status {
-    font-weight: normal;
-    display: block;
-    color: var(--color3);
-}
-
 .connect {
-    position: absolute;
+    position: relative;
+    height: 100%;
     text-align: center;
     background: var(--bg-color4);
     padding: .5em 3em 0;
+    margin: 0 2px;
     text-align: left;
     border-top: var(--color2) solid 1px;
     font-size: 12px;
     width: 100%;
     left: 0;
-    bottom: 0;
+    bottom: 2px;
 }
 
 .connect p {
