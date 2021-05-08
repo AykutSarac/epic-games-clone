@@ -1,18 +1,13 @@
 import React from 'react'
 import { FORTNITE } from '../../assets/'
 
-const qlStyle = {
-    position: 'sticky',
-    top: '0px',
-    backgroundColor: 'var(--bg-color1)',
-    zIndex: '10'
-}
+import styles from '../layout/Sidecontent.module.css'
 
 const QuickLaunch = () => {
     return (
-        <div className="quicklaunch" style={qlStyle}>
+        <div className={styles.quicklaunch}>
             <p>Quick Launch</p>
-            <ul className="games">
+            <ul className={styles.games}>
                 <li><img src={FORTNITE} alt="fortnite" /></li>
             </ul>
         </div>

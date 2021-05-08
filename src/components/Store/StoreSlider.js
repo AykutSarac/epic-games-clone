@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import newsData from '../../assets/News/newsData.json'
-import './StoreSlider.css'
+import styles from './StoreSlider.module.css'
 
 const StoreSlider = () => {
 
@@ -26,21 +26,21 @@ const StoreSlider = () => {
 
 
     return (
-        <div className="slider-wrapper">
-            <div className="featured" style={{ backgroundImage: `url(${gameList[counter]._images_[0]})` }}>
-                <div className="item-text">
+        <div className={styles.sliderWrapper}>
+            <div className={styles.featured} style={{ backgroundImage: `url(${gameList[counter]._images_[0]})` }}>
+                <div className={styles.itemText}>
                     <h3>{gameList[counter].title}</h3>
-                    <div className="buttons">
-                        <a href="#!" className="btn btn-download">DOWNLOAD NOW</a>
-                        <a href="#!" className="btn btn-wishlist">+</a>
+                    <div className={styles.buttons}>
+                        <a href="#!" className={`${styles.btn} ${styles.btnDownload}`}>DOWNLOAD NOW</a>
+                        <a href="#!" className={`${styles.btn} ${styles.btnWishlist}`}>+</a>
                     </div>
                 </div>
 
             </div>
-            <ul className="gamelist">
+            <ul className={styles.gamelist}>
                 {gameList.map((game, index) => (
                     <li key={game._id} onClick={onClick} style={{ display: 'block' }} >
-                        <div id={index} className={`game ${index === counter ? 'current' : ''}`}>
+                        <div id={index} className={`${styles.game} ${index === counter ? styles.current : ''}`}>
                             <img src={game._images_[0]} alt="game" />
                        { game.title.split(' ').slice(0, 4).join(' ') }...
                         </div>

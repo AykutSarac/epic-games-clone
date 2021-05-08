@@ -1,5 +1,4 @@
 import React from 'react'
-import './Sidebar.css'
 import { Link, NavLink } from 'react-router-dom'
 import * as ICON from '../../assets'
 import { ReactComponent as GearIcon } from '../../assets/Sidebar/gear.svg'
@@ -7,29 +6,31 @@ import { ReactComponent as ProfileIcon } from '../../assets/Sidebar/profile.svg'
 import { toggleDownloads } from '../../actions/layoutActions'
 import { connect } from 'react-redux'
 
+import styles from './Sidebar.module.css'
+
 
 const Sidebar = ({ toggleDownloads, displayDownloads }) => {
 
     const onClose = () => displayDownloads && toggleDownloads(false);
 
     return (
-        <div className="sidebar-wrapper">
-            <div className="sidebar">
-                <div className="brand">
+        <div className={styles.sidebarWrapper}>
+            <div className={styles.sidebar}>
+                <div className={styles.brand}>
                     <img src={ICON.LOGO} width="36" alt="epic logo" />
                     <Link to="/">Epic Games</Link>
                 </div>
                 <nav>
-                    <ul className="primary-nav" onClick={onClose}>
-                        <li><NavLink activeClassName="current" exact to="/"><img className="icon" src={ICON.HOME} height="20" width="20" alt="home" />Home</NavLink></li>
-                        <li><NavLink activeClassName="current" to="/store"><span className="icon icon-store"></span>Store</NavLink></li>
-                        <li><NavLink activeClassName="current" to="/library"><img className="icon" src={ICON.LIBRARY} height="20" width="20" alt="library" />Library</NavLink></li>
-                        <li><NavLink activeClassName="current" to="/uengine"><img className="icon" src={ICON.UNREAL} height="20" width="20" alt="unreal engine" />Unreal Engine</NavLink></li>
+                    <ul onClick={onClose}>
+                        <li><NavLink activeClassName={styles.current} exact to="/"><img className={styles.icon} src={ICON.HOME} height="20" width="20" alt="home" />Home</NavLink></li>
+                        <li><NavLink activeClassName={styles.current} to="/store"><span className={`${styles.icon} ${styles.iconStore}`}></span>Store</NavLink></li>
+                        <li><NavLink activeClassName={styles.current} to="/library"><img className={styles.icon} src={ICON.LIBRARY} height="20" width="20" alt="library" />Library</NavLink></li>
+                        <li><NavLink activeClassName={styles.current} to="/uengine"><img className={styles.icon} src={ICON.UNREAL} height="20" width="20" alt="unreal engine" />Unreal Engine</NavLink></li>
                     </ul>
-                    <ul className="secondary-nav" onClick={onClose}>
-                        <li><a href="#downloads" onClick={toggleDownloads}><img src={ICON.DOWNLOAD} className="icon" alt="download icon" />Downloads</a></li>
-                        <li><a href="#settings"><GearIcon className="icon" />Settings</a></li>
-                        <li className="icon-profile"><a href="#profile"><ProfileIcon className="icon" />AykutSrch</a></li>
+                    <ul onClick={onClose}>
+                        <li><a href="#downloads" onClick={toggleDownloads}><img src={ICON.DOWNLOAD} className={styles.icon} alt="download icon" />Downloads</a></li>
+                        <li><a href="#settings"><GearIcon className={styles.icon} />Settings</a></li>
+                        <li className={styles.profile}><a href="#profile"><ProfileIcon className={styles.icon} />AykutSrch</a></li>
                     </ul>
                 </nav>
             </div>

@@ -1,27 +1,28 @@
 import React from 'react'
-import './StoreNavbar.css'
 import friendsIcon from '../../assets/News/friends.png'
 import { connect } from 'react-redux'
 import { toggleFriendlist } from '../../actions/layoutActions'
+
+import styles from './StoreNavbar.module.css'
 
 const StoreNavbar = ({ toggleFriendlist, friends }) => {
 
     const onlineCount = friends.filter(u => u.status === 'online').length;
 
     return (
-        <nav className="storeNavbar">
-            <ul className="primary-nav">
+        <nav className={styles.storeNavbar}>
+            <ul className={styles.primaryNav}>
                 <li>Discover</li>
                 <li>Browse</li>
             </ul>
 
-            <ul className="secondary-nav">
+            <ul>
                 <li>Wishlist</li>
                 <li>
                     <input type="search" placeholder="Search" />
                 </li>
                 <li>
-                    <span className="icon" style={{ backgroundImage: `url(${friendsIcon})` }} onClick={toggleFriendlist}>{onlineCount}</span>
+                    <span className={styles.icon} style={{ backgroundImage: `url(${friendsIcon})` }} onClick={toggleFriendlist}>{onlineCount}</span>
                 </li>
             </ul>
         </nav>

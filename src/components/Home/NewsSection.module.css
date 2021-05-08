@@ -1,11 +1,11 @@
-.news-list {
+.NewsList {
     display: flex;
     justify-content: space-between;
     border-bottom: var(--bg-color3) solid 1.5px;
     padding-bottom: 5em;
 }
 
-.news-list .card {
+.card {
     display: flex;
     flex-direction: column;
     color: white;
@@ -14,7 +14,7 @@
     margin-right: 1em;
 }
 
-.news-list .timestamp {
+.Timestamp {
     margin: 1em 0;
     color: var(--color2);
     font-size: 11px;
@@ -22,7 +22,7 @@
     letter-spacing: 1px;
 }
 
-.news-list img {
+.NewsList img {
     width: 100%;
     height: 100%;
     height: fit-content;
@@ -30,19 +30,19 @@
     transition: 0.4s;
 }
 
-.news-list .card:hover img{
+.card:hover img{
     filter: brightness(150%);
 }
 
-.news-list .card:hover .readmore {
+.card:hover .ReadMore {
     border-color: white;
 }
 
-.news-list .description {
+.Description {
     margin-bottom: 1em;
 }
 
-.news-list .readmore {
+.ReadMore {
     margin-top: auto;
     border-bottom: var(--color2) solid 2px;
     width: fit-content;
@@ -50,15 +50,12 @@
 }
 
 @media only screen and (max-width: 1100px) {
-    .news-list {
+    .NewsList {
         flex-direction: column;
     }
 
-    .news-list .card {
+    .card {
         width: 100%;
-    }
-
-    .news-list .card {
         margin: 1em auto;
     }
 }

@@ -12,22 +12,20 @@
     justify-content: space-between;
 }
 
-
-
-.saleslist .card {
+.card {
     width: 19%;
 }
 
-.saleslist .card-text {
+.cardText {
     word-wrap: break-word;
     font-weight: bold;
 }
 
-.saleslist .author {
+.author {
     color: var(--color3);
 }
 
-.saleslist .pricetag {
+.pricetag {
     background: rgb(0, 119, 255);
     border-radius: 5px;
     padding: .5em;
@@ -35,7 +33,7 @@
     font-size: 10px;
 }
 
-.saleslist .oldprice {
+.oldprice {
     color: var(--color3);
     text-decoration: line-through;
 }

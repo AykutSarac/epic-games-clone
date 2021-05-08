@@ -1,4 +1,4 @@
-.downloads {
+.Downloads {
     position: fixed;
     top: 0;
     left: 0;
@@ -13,13 +13,13 @@
     padding: 4em 2em;
 }
 
-.downloads .updating {
+.Updates {
     padding-bottom: 3em;
     margin-bottom: 1em;
     border-bottom: var(--bg-color3) solid 1px;
 }
 
-.downloads .updating span {
+.Updates span {
     margin-left: 1em;
 }
 
@@ -42,7 +42,7 @@
 }
 
 @media only screen and (max-width: 968px) {
-    .downloads {
+    .Downloads {
         display: none;
     }
 }

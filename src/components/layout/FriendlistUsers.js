@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
-import './Friendlist.css'
+import styles from './Friendlist.module.css'
 
 const FriendlistUsers = ({ friends, user, setCurrent, style, search }) => {
-
 
     const [onlineCount, setOnlineCount] = useState(0);
 
@@ -17,32 +16,33 @@ const FriendlistUsers = ({ friends, user, setCurrent, style, search }) => {
    
 
     return (
-        <div className="userlistwrapper">
-            <div className="userlist" style={style === 0 ? { height: '55vh' } : { height: '46vh' }}>
+        <div className={styles.userlistwrapper}>
+            <div className={styles.userlist} style={style === 0 ? { height: '55vh' } : { height: '46vh' }}>
                 <p>Online ({onlineCount})</p>
 
                 <ul>
                     <li>
-                        <span className="icon online" style={{ backgroundColor: user.color }}>{user.username[0]}</span>
-                        {user.username} <span className="you">YOU</span>
-                        <span className="status">{user.status[0].toUpperCase() + user.status.slice(1)}</span>
+                        <span className={`${styles.icon} ${styles.online}`} style={{ backgroundColor: user.color }}>{user.username[0]}</span>
+                        {user.username}
+                        <span className={styles.you}>YOU</span>
+                        <span className={styles.status}>{user.status[0].toUpperCase() + user.status.slice(1)}</span>
                     </li>
                     {friends.filter(user => user.status === 'online').map((user, index) => (
                         <li key={index} onClick={() => onCurrent(user)}>
-                            <span className={`icon ${user.status}`} style={{ background: user.color }}>{user.username[0]}</span>
+                            <span className={`${styles.icon} ${styles[user.status]}`} style={{ background: user.color }}>{user.username[0]}</span>
                             {user.username}
-                            <span className="status">{user.status[0].toUpperCase() + user.status.slice(1)}</span>
+                            <span className={styles.status}>{user.status[0].toUpperCase() + user.status.slice(1)}</span>
                         </li>
                     ))}
                 </ul>
+                
                 <p>Friends</p>
-
                 <ul>
                     {friends.filter(user => !user.you && user.username.toLowerCase().includes(search.toLowerCase())).sort(sortList).map((user, index) => (
                         <li key={index} onClick={() => onCurrent(user)}>
-                            <span className={`icon ${user.status}`} style={{ background: user.color }}>{user.username[0].toUpperCase()}</span>
+                            <span className={`${styles.icon} ${styles[user.status]}`} style={{ background: user.color }}>{user.username[0].toUpperCase()}</span>
                             {user.username}
-                            <span className="status">{user.status[0].toUpperCase() + user.status.slice(1)}</span>
+                            <span className={styles.status}>{user.status[0].toUpperCase() + user.status.slice(1)}</span>
                         </li>
                     ))}
                 </ul>

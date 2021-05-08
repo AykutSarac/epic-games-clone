@@ -1,12 +1,12 @@
 import React from 'react'
-import './Downloads.css'
+import styles from './Downloads.module.css'
 
 const Downloads = () => {
 
     return (
-        <div className="downloads">
-            <div className="updating">Updating<span style={{ color: 'white' }}>00</span> </div>
-            <div className="download-chart">
+        <div className={styles.Downloads}>
+            <div className={styles.Updates}>Updating<span style={{ color: 'white' }}>00</span> </div>
+            <div>
                 You have no tasks
             </div>
         </div>

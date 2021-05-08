@@ -1,16 +1,18 @@
 import React from 'react'
-import './LibraryNavbar.css'
 import friendsIcon from '../../assets/News/friends.png'
 import { toggleFriendlist } from '../../actions/layoutActions'
 import { connect } from 'react-redux';
+
+import styles from './LibraryNavbar.module.css'
+
 
 const LibraryNavbar = ({ toggleFriendlist, friends }) => {
 
     const onlineCount = friends.filter(u => u.status === 'online').length;
 
     return (
-        <nav className="libraryNavbar">
-            <ul className="primary-nav">
+        <nav className={styles.libraryNavbar}>
+            <ul className={styles.primaryNav}>
                 <li>
                     <label>Sort by:</label>
                     <select disabled>
@@ -25,12 +27,12 @@ const LibraryNavbar = ({ toggleFriendlist, friends }) => {
                 </li>
             </ul>
 
-            <ul className="secondary-nav">
+            <ul>
                 <li>
                     <input type="search" placeholder="Search" />
                 </li>
                 <li>
-                    <span className="icon" style={{ backgroundImage: `url(${friendsIcon})` }} onClick={toggleFriendlist}>{onlineCount}</span>
+                    <span className={styles.icon} style={{ backgroundImage: `url(${friendsIcon})` }} onClick={toggleFriendlist}>{onlineCount}</span>
                 </li>
             </ul>
         </nav>

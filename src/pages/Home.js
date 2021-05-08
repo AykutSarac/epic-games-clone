@@ -8,9 +8,8 @@ import QuickLaunch from '../components/Home/QuickLaunch';
 const Home = ({ toggleFriendlist }) => {
 
   useEffect(() => {
-    toggleFriendlist(false);
     toggleFriendlist(true);
-    return () => toggleFriendlist(false);
+    
     //eslint-disable-next-line
   }, []);
 

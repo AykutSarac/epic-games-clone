@@ -1,16 +1,16 @@
-.newsfeed {
+.NewsFeed {
     display: flex;
     flex-direction: row;
 }
 
-.newsfeed ul {
+.NewsFeed ul {
     list-style: none;
     padding: 0;
     margin: 0;
     width: 100%;
 }
 
-.newsfeed li a {
+.NewsFeed li a {
     display: flex;
     flex-direction: row;
     padding: 1.5em 0;
@@ -19,13 +19,13 @@
     color: white;
 }
 
-.newsfeed .desc {
+.Description {
     margin: 0 0 0 2em;
     display: flex;
     flex-direction: column;
 }
 
-.newsfeed time {
+.NewsFeed time {
     color: var(--color2);
     font-size: 11px;
     font-weight: bold;
@@ -33,7 +33,7 @@
     margin-bottom: .5em;
 }
 
-.newsfeed .readmore {
+.ReadMore {
     padding: 0;
     margin-top: auto;
     border-bottom: var(--bg-color5) solid 2px;
@@ -41,17 +41,17 @@
     transition: 0.4s;
 }
 
-.newsfeed img {
+.NewsFeed img {
     width: 20%;
     height: fit-content;
     border-radius: 5px;
     transition: 0.4s;
 }
 
-.newsfeed li:hover img {
+.NewsFeed li:hover img {
     filter: brightness(130%);
 }
 
-.newsfeed li:hover .readmore {
+.NewsFeed li:hover .ReadMore {
     border-color: white;
 }

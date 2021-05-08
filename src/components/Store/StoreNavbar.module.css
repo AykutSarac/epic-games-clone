@@ -17,7 +17,7 @@
     margin: 0 1em;
 }
 
-.storeNavbar .primary-nav li:nth-child(1) {
+.primaryNav li:nth-child(1) {
     color: white;
 }
 
@@ -30,14 +30,14 @@
     padding: .8em;
 }
 
-.storeNavbar .icon {
+.icon {
     padding-right: 50px;
     background-repeat: no-repeat;
     background-position: center;
     filter: invert(70%);
 }
 
-.storeNavbar .icon:hover {
+.icon:hover {
     filter: invert(100%);
     color: black;
     cursor: pointer;

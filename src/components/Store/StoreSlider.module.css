@@ -1,4 +1,4 @@
-.slider-wrapper {
+.sliderWrapper {
     display: flex;
     flex-direction: row;
     overflow: hidden;
@@ -38,12 +38,12 @@
     filter: brightness(110%);
 }
 
-.featured .btn-download {
+.featured .btnDownload {
     padding: 1em;
     border-radius: 5px 0 0 5px;
 }
 
-.featured .btn-wishlist {
+.featured .btnWishlist {
     padding-top: 15px;
     border-radius: 0 5px 5px 0;
     width: 40px;
@@ -56,7 +56,7 @@
     margin-right: 1em;
 }
 
-.featured .item-text {
+.featured .itemText {
     box-sizing: content-box;
     overflow: hidden;
     padding: 0 3em 3em;
@@ -65,7 +65,7 @@
     z-index: 2;
 }
 
-.featured .item-text::before {
+.featured .itemText::before {
     position: absolute;
     background: rgba(0, 0, 0, 0.300);
     width: 100%;

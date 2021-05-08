@@ -1,4 +1,4 @@
-.sidebar-wrapper {
+.sidebarWrapper {
     position: relative;
     padding: 0 1.5em 2em 3em;
     width: 13rem;
@@ -27,7 +27,7 @@
     filter: invert(70%);
 }
 
-.icon-store {
+.iconStore {
     background: url(https://www.svgrepo.com/show/105540/label.svg);
 }
 
@@ -89,7 +89,7 @@
 }
 
 
-.sidebar .icon-profile::after {
+.sidebar .profile::after {
     content: '';
     width: 8px;
     height: 8px;

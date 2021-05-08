@@ -1,0 +1,12 @@
+.App {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+}
+
+@media only screen and (max-width: 968px) {
+
+  .App,
+  .homepage {
+    display: unset;
+  }
+}

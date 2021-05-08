@@ -4,7 +4,7 @@
     border-radius: 5px;
 }
 
-.freegames .flexheader {
+.flexheader {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -18,7 +18,7 @@
     margin-right: .5em;
 }
 
-.freegames .btn-outline {
+.btnOutline {
     text-decoration: none;
     color: white;
     font-weight: bold;
@@ -29,11 +29,11 @@
     transition: 0.2s;
 }
 
-.freegames .btn-outline:hover {
+.btnOutline:hover {
     background: rgb(80, 80, 80);
 }
 
-.freegames .game {
+.game {
     text-decoration: none;
     color: var(--color3);
     line-height: 20px;
@@ -66,14 +66,14 @@
     font-weight: normal;
 }
 
-.freegames .flex {
+.flex {
     display: flex;
     flex-direction: row;
     width: 100%;
     gap: 1.5em;
 }
 
-.freegames .flextext {
+.flextext {
     margin-top: 1em;
 }
 

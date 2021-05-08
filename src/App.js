@@ -10,14 +10,14 @@ import Home from './pages/Home'
 import Library from './pages/Library'
 import Store from './pages/Store'
 
-import './App.css';
+import styles from './App.module.css';
 
 
 function App() {
   return (
     <Provider store={store}>
       <Router basename={process.env.PUBLIC_URL}>
-        <div className="App">
+        <div className={styles.App}>
           <Sidebar />
           <Sidecontent>
             <Switch>
