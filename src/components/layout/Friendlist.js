@@ -1,15 +1,16 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Friendlist.css'
 import { SEARCH } from '../../assets'
-import { useHistory } from 'react-router'
 import { connect } from 'react-redux'
 import bellIcon from '../../assets/News/bell.png'
 import settingsIcon from '../../assets/Sidebar/gear.svg'
+import { useLocation } from 'react-router'
 
 const Friendlist = ({ friends, user }) => {
 
-    const history = useHistory();
-    const style = history.location.pathname === '/' ? 0 : 1;
+    const { pathname } = useLocation();
+
+    // Define styles depending on route
     const styles = [
         { height: '90vh', top: '3em' },
         { height: '80vh', top: '7em' }
@@ -18,19 +19,23 @@ const Friendlist = ({ friends, user }) => {
     const [search, setSearch] = useState('');
     const [toggle, setToggle] = useState(true);
     const [current, setCurrent] = useState(null);
+    const [style, setStyle] = useState(1);
 
+    // Methods
     const onToggle = () => setToggle(!toggle);
     const onCurrent = (user) => setCurrent(user);
     const onChange = (e) => setSearch(e.target.value);
     const clearSearch = () => setSearch('');
 
-    const sortList = (a, b) => {
-        if (a.status === 'online') {
-            return 1
-        } else {
-            return -1
-        }
-    }
+    // Sort friendlist from offline to online
+    const sortList = (a, b) => (a.status === 'online') ? 1 : -1;
+
+
+    useEffect(() => {
+        // Change friendlist style on route
+        if (pathname === '/') setStyle(0);
+        return () => setStyle(1);
+    }, [pathname]);
 
     return (
         <div className="friendlist" style={styles[style]}>
@@ -56,7 +61,7 @@ const Friendlist = ({ friends, user }) => {
                     {
                         toggle ? (
                             <div className="userlistwrapper">
-                                <div className="userlist" style={style === 0 ? { height: '65vh' } : { height: '55vh' }}>
+                                <div className="userlist" style={style === 0 ? { height: '55vh' } : { height: '46vh' }}>
                                     <p>Online {`(${friends.filter(user => user.status === 'online').length + 1})`}</p>
                                     <ul>
                                         <li>

@@ -10,6 +10,10 @@
    user-select: none;
  }
 
+ * {
+  box-sizing: border-box;
+}
+
  :root {
    --bg-color1: #121212;
    --bg-color2: #141414;
