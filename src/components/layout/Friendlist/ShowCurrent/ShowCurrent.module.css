@@ -72,3 +72,22 @@
 .showCurrent p {
     margin: 0;
 }
+
+:is(.online, .offline)::after {
+    position: absolute;
+    content: '';
+    width: 8px;
+    height: 8px;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    border: var(--bg-color2) solid 2px;
+}
+
+.icon.online::after {
+    background: lime;
+}
+
+.icon.offline::after {
+    background: grey;
+}
