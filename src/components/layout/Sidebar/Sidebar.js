@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import * as ICON from '../../assets'
-import { ReactComponent as GearIcon } from '../../assets/Sidebar/gear.svg'
-import { ReactComponent as ProfileIcon } from '../../assets/Sidebar/profile.svg'
-import { toggleDownloads } from '../../actions/layoutActions'
+import * as ICON from '../../../assets'
+import { ReactComponent as GearIcon } from '../../../assets/Sidebar/gear.svg'
+import { ReactComponent as ProfileIcon } from '../../../assets/Sidebar/profile.svg'
+import { toggleDownloads } from '../../../actions/layoutActions'
 import { connect } from 'react-redux'
 
 import styles from './Sidebar.module.css'

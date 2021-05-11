@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react'
-import { SEARCH } from '../../assets'
-import bellIcon from '../../assets/News/bell.png'
-import settingsIcon from '../../assets/Sidebar/gear.svg'
+import { SEARCH } from '../../../assets'
+import bellIcon from '../../../assets/News/bell.png'
+import settingsIcon from '../../../assets/Sidebar/gear.svg'
 import { useLocation } from 'react-router'
-import FriendlistUsers from './FriendlistUsers'
+import FriendlistUsers from './FriendlistUsers/FriendlistUsers'
 import { connect } from 'react-redux'
-import { toggleFriendlist } from '../../actions/layoutActions'
+import { toggleFriendlist } from '../../../actions/layoutActions'
 
 import styles from './Friendlist.module.css'
+import ShowCurrent from './ShowCurrent/ShowCurrent'
 
 const Friendlist = ({ toggleFriendlist }) => {
 
@@ -26,7 +27,6 @@ const Friendlist = ({ toggleFriendlist }) => {
 
     // Methods
     const onToggle = () => setToggle(!toggle);
-    const onCurrent = (user) => setCurrent(user);
     const onChange = (e) => setSearch(e.target.value);
     const clearSearch = () => setSearch('');
 
@@ -69,19 +69,7 @@ const Friendlist = ({ toggleFriendlist }) => {
                 </div>
             </div>
 
-            { current &&
-                <div className={styles.showCurrent}>
-                    <div className={styles.icons}>
-                        <span>...</span>
-                        <span className={styles.iconClose} onClick={() => onCurrent(null)}>&times;</span>
-                    </div>
-                    <span className={`${styles.icon} ${styles[current.status]}`} style={{ background: current.color }}>{current.username[0].toUpperCase()}</span>
-                    <div className={styles.userinfo}>
-                        <p>{current.username}</p>
-                        <p>{current.status}</p>
-                    </div>
-                </div>
-            }
+            { current && <ShowCurrent current={current} setCurrent={setCurrent} /> }
 
         </div>
     )

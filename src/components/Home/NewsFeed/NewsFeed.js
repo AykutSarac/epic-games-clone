@@ -1,10 +1,10 @@
 import React from 'react'
 import Moment from 'react-moment'
-import newsData from '../../assets/News/newsData.json'
+import { connect } from 'react-redux'
 import styles from './NewsFeed.module.css'
+import PropTypes from 'prop-types'
 
-
-const NewsFeed = () => {
+const NewsFeed = ({ newsData }) => {
     return (
         <section className={styles.NewsFeed}>
             <ul>
@@ -27,4 +27,12 @@ const NewsFeed = () => {
     )
 }
 
-export default NewsFeed
+NewsFeed.propTypes = {
+    newsData: PropTypes.array.isRequired
+}
+
+const mapStateToProps = (state) => ({
+    newsData: state.layout.newsData
+});
+
+export default connect(mapStateToProps, null)(NewsFeed)

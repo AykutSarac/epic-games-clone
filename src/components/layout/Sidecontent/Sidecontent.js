@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
 import { connect } from "react-redux";
 import { useLocation } from 'react-router';
-import { toggleDownloads, toggleFriendlist } from '../../actions/layoutActions'
-import Downloads from './Downloads'
-import Friendlist from './Friendlist';
+import { toggleDownloads, toggleFriendlist } from '../../../actions/layoutActions'
+import Downloads from '../Downloads/Downloads'
+import Friendlist from '../Friendlist/Friendlist';
 import styles from './Sidecontent.module.css'
 
 const Sidecontent = ({ displayFriendlist, displayDownloads, toggleDownloads, toggleFriendlist, children }) => {

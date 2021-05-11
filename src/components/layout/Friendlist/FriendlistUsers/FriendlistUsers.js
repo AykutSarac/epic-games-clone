@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
-import styles from './Friendlist.module.css'
+import styles from './FriendlistUsers.module.css'
 
 const FriendlistUsers = ({ friends, user, setCurrent, style, search }) => {
 

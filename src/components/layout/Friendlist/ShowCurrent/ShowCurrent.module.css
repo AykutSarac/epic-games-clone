@@ -1,0 +1,74 @@
+.showCurrent .icon {
+    color: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+}
+
+.showCurrent {
+    position: absolute;
+    top: 30%;
+    left: 0;
+    transform: translateX(-100%);
+    background: var(--bg-color4);
+    border: var(--color3) solid 2px;
+    border-radius: 5px;
+    text-align: center;
+    height: 180px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.showCurrent .icon {    
+    transform: translate(225%, 175%) scale(1.5);
+}
+
+.showCurrent .icons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1em;
+    flex-direction: row;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-right: 1em;
+    align-items: center;
+    margin-top: .5em;
+}
+
+.showCurrent .icons span {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25px;
+    width: 25px;
+}
+
+.showCurrent .icons span:hover {
+    background: rgba(255, 255, 255, 0.1);
+    
+    border-radius: 5px;
+}
+
+.showCurrent .iconClose {
+    font-weight: normal;
+    font-size: 1.4rem;
+}
+
+.showCurrent .userinfo {
+    margin-top: 40%;
+}
+
+.showCurrent .userinfo p:first-child {
+    font-weight: bold;
+}
+
+.showCurrent p {
+    margin: 0;
+}

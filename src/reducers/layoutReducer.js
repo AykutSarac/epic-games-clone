@@ -5,6 +5,8 @@ import {
     SET_FRIEND
 } from '../actions/types'
 
+import newsData from '../assets/News/newsData.json';
+
 const initialState = {
     displayFriendlist: false,
     displayDownloads: false,
@@ -22,7 +24,8 @@ const initialState = {
         { username: 'RealBillGates', status: 'offline', color: 'darkviolet', _id: '6' },
         { username: 'FortniteKid007', status: 'online', color: 'olive', _id: '7' },
         { username: 'Purces', status: 'offline', color: 'darkviolet', _id: '8' }
-    ]
+    ],
+    newsData: newsData
 }
 
 

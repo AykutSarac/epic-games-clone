@@ -1,9 +1,11 @@
 import React from 'react'
 import Moment from 'react-moment'
-import newsData from '../../assets/News/newsData.json'
+import { connect } from 'react-redux'
 import styles from './NewsSection.module.css'
+import PropTypes from 'prop-types'
 
-const NewsSection = () => {
+
+const NewsSection = ({ newsData }) => {
     return (
         <React.Fragment>
             <p>News</p>
@@ -21,4 +23,12 @@ const NewsSection = () => {
     )
 }
 
-export default NewsSection
+NewsSection.propTypes = {
+    newsData: PropTypes.array.isRequired
+}
+
+const mapStateToProps = (state) => ({
+    newsData: state.layout.newsData
+});
+
+export default connect(mapStateToProps, null)(NewsSection)

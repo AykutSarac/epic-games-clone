@@ -1,8 +1,8 @@
 import React from 'react'
-import StoreSlider from '../components/Store/StoreSlider'
-import StoreNavbar from '../components/Store/StoreNavbar'
-import StoreSales from '../components/Store/StoreSales'
-import FreeGames from '../components/Store/FreeGames'
+import StoreSlider from '../components/Store/StoreSlider/StoreSlider'
+import StoreNavbar from '../components/Store/StoreNavbar/StoreNavbar'
+import StoreSales from '../components/Store/StoreSales/StoreSales'
+import FreeGames from '../components/Store/FreeGames/FreeGames'
 
 const Store = () => {
     return (

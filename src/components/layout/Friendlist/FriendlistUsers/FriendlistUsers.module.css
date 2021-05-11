@@ -1,0 +1,73 @@
+.userlistwrapper {
+    position: absolute;
+    float: left;
+    width: 100%;
+    padding-right: 3em;
+}
+
+.userlist {
+    position: relative;
+    overflow-y: scroll;
+}
+
+.userlist .you {
+    background: var(--bg-color3);
+    border-radius: 5px;
+    font-size: 10px;
+    font-weight: normal;
+    padding: 2px 4px;
+}
+
+.userlist p {
+    color: var(--color3);
+    font-weight: bold;
+}
+
+.status {
+    font-weight: normal;
+    display: block;
+    color: var(--color3);
+}
+
+.userlist ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-weight: bold;
+}
+
+.userlist li {
+    margin: 2em auto 2em 3.5em;
+    cursor: pointer;
+}
+
+.icon {
+    color: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+}
+
+:is(.online, .offline)::after {
+    position: absolute;
+    content: '';
+    width: 8px;
+    height: 8px;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    border: var(--bg-color2) solid 2px;
+}
+
+.icon.online::after {
+    background: lime;
+}
+
+.icon.offline::after {
+    background: grey;
+}

@@ -1,6 +1,6 @@
 import React from 'react'
-import friendsIcon from '../../assets/News/friends.png'
-import { toggleFriendlist } from '../../actions/layoutActions'
+import friendsIcon from '../../../assets/News/friends.png'
+import { toggleFriendlist } from '../../../actions/layoutActions'
 import { connect } from 'react-redux';
 
 import styles from './LibraryNavbar.module.css'

@@ -2,8 +2,8 @@ import React from 'react'
 import { Provider } from 'react-redux'
 import store from './store'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import Sidebar from './components/layout/Sidebar';
-import Sidecontent from './components/layout/Sidecontent';
+import Sidebar from './components/layout/Sidebar/Sidebar';
+import Sidecontent from './components/layout/Sidecontent/Sidecontent';
 
 // Pages
 import Home from './pages/Home'

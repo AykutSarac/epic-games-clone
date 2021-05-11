@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import newsData from '../../assets/News/newsData.json'
+import { connect } from 'react-redux'
 import styles from './StoreSlider.module.css'
+import PropTypes from 'prop-types'
 
-const StoreSlider = () => {
+const StoreSlider = ({ newsData }) => {
 
     const gameList = newsData.slice(0, 6);
     const [counter, setCounter] = useState(0);
@@ -51,4 +52,12 @@ const StoreSlider = () => {
     )
 }
 
-export default StoreSlider
+StoreSlider.propTypes = {
+    newsData: PropTypes.array.isRequired
+}
+
+const mapStateToProps = (state) => ({
+    newsData: state.layout.newsData
+});
+
+export default connect(mapStateToProps, null)(StoreSlider)

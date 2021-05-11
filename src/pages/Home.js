@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { toggleFriendlist } from '../actions/layoutActions'
-import NewsFeed from '../components/Home/NewsFeed';
-import NewsSection from '../components/Home/NewsSection';
-import QuickLaunch from '../components/Home/QuickLaunch';
+import NewsFeed from '../components/Home/NewsFeed/NewsFeed';
+import NewsSection from '../components/Home/NewsSection/NewsSection';
+import QuickLaunch from '../components/Home/QuickLaunch/QuickLaunch';
 
 const Home = ({ toggleFriendlist }) => {
 
@@ -17,7 +17,7 @@ const Home = ({ toggleFriendlist }) => {
     <div style={{ width: 'calc(100% - 400px)' }}>
       <QuickLaunch />
       <NewsSection />
-      <NewsFeed />
+      <NewsFeed></NewsFeed>
     </div>
   )
 }
