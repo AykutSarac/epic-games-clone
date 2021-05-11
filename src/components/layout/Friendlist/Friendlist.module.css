@@ -8,7 +8,7 @@
     right: 2em;
 }
 
-.Friendlist .wrap {
+.wrap {
     position: relative;
     overflow: hidden;
     height: 100%;
@@ -17,7 +17,7 @@
     grid-template-rows: 8fr 1fr;
 }
 
-.Friendlist .upper {
+.upper {
     position: relative;
     padding: 0 1.5em 1.5em;    
 }
@@ -28,7 +28,7 @@
     width: 0;
 }
 
-.Friendlist .clear {
+.clear {
     position: absolute;
     right: 3em;
     margin: 0;
@@ -74,7 +74,7 @@
     margin: 0 0 1em;
 }
 
-.search .SearchInput {
+.SearchInput {
     border: var(--bg-color5) solid;
     border-width: 1px;
     font-weight: bold;
@@ -87,12 +87,12 @@
     outline: none;
 }
 
-.search .SearchInput:focus, .SearchInput:focus + .searchBtn {
+.SearchInput:focus, .SearchInput:focus + .searchBtn {
     border-color: #fff;
     transition: 0.4s;
 }
 
-.search .SearchInput::placeholder {
+.SearchInput::placeholder {
     color: var(--color2);
 }
 

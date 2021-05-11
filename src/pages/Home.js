@@ -14,7 +14,7 @@ const Home = ({ toggleFriendlist }) => {
   }, []);
 
   return (
-    <div style={{ width: 'calc(100% - 400px)' }}>
+    <div style={{ width: 'calc(100% - 375px)' }}>
       <QuickLaunch />
       <NewsSection />
       <NewsFeed></NewsFeed>

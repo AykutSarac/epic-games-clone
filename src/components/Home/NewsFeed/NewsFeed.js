@@ -15,9 +15,7 @@ const NewsFeed = ({ newsData }) => {
                             <div className={styles.Description}>
                                 <Moment date={newsItem.lastModified} filter={(d) => d.replace(' days', 'D').replace(' hours', 'H').toUpperCase()} fromNow />
                                 {newsItem.title}
-                                <span className={styles.ReadMore}>
-                                    Read more
-                            </span>
+                                <span className={styles.ReadMore}>Read more</span>
                             </div>
                         </a>
                     </li>

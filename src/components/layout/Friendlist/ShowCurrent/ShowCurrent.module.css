@@ -71,6 +71,7 @@
 
 .showCurrent p {
     margin: 0;
+    user-select: text;
 }
 
 :is(.online, .offline)::after {
