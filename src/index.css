@@ -46,3 +46,11 @@ body::-webkit-scrollbar {
 ul {
     list-style: none;
 }
+
+@media only screen and (max-width: 968px) {
+
+    html {
+        overflow-y: hidden;
+    }
+
+}
